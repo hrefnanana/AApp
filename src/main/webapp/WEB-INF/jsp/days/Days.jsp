@@ -4,68 +4,47 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@ taglib prefix="sf" uri="http://www.springframework.org/tags/form" %>
 
-<html lang="en">
-
+<html lang="is">
     <head>
+        <meta charset = "UTF-8">
         <title>Postit Notes</title>
 
         <link rel="stylesheet" type="text/css" href="<c:url value="/css/postitnote.css"/>"/>
     </head>
     <body>
 
-    <h1><a href="/days">Postit Notes</a></h1>
+    <h1><a href="/day/days">Postit Notes</a></h1>
 
-    <%--Note that the `commandName` given here HAS TO MATCH the name of the attribute--%>
-    <%--that is added to the model that is passed to the view.--%>
-    <%--See PostitNoteController, method postitNoteViewGet(), and find where this attribute is added to the model.--%>
-    <sf:form method="POST" commandName="days" action="/days">
+     <sf:form method="POST" commandName="day" action="/day">
 
         <table>
             <tr>
                 <td> Name:</td>
                 <%--the `path` attribute matches the `name` attribute of the Entity that was passed in the model--%>
-                <td><sf:input path="date" type="text" placeholder="Enter name"/></td>
+                <td><sf:input path="date" type="text" placeholder="DD/MM/YYYY"/></td>
             </tr>
             <tr>
-                <td>Notes:</td>
-                    <%--the `path` attribute matches the `note` attribute of the Entity that was passed in the model--%>
-                <td><sf:textarea path="note" type="text" placeholder="Note text here"/></td>
+                <td> Vakna:</td>
+                <%--the `path` attribute matches the `name` attribute of the Entity that was passed in the model--%>
+                <td><sf:checkbox path="vakna7" default="false"/></td>
             </tr>
+            <tr>
+                <td> Borða:</td>
+                <%--the `path` attribute matches the `name` attribute of the Entity that was passed in the model--%>
+                <td><sf:checkbox path="borda" default="false"/></td>
+            </tr>
+            <tr>
+                <td> Hugleiða:</td>
+                <%--the `path` attribute matches the `name` attribute of the Entity that was passed in the model--%>
+                <td><sf:checkbox path="hugleida" default="false"/></td>
+            </tr>
+           
         </table>
 
-        <input type="submit" VALUE="Post It!"/>
+        <input type="submit" VALUE="Check it!"/>
 
     </sf:form>
 
-    <%--Choose what code to generate based on tests that we implement--%>
-    <c:choose>
-        <%--If the model has an attribute with the name `postitNotes`--%>
-        <c:when test="${not empty days}">
-            <%--Create a table for the Postit Notes--%>
-            <table class="notes">
-
-                <%--For each postit note, that is in the list that was passed in the model--%>
-                <%--generate a row in the table--%>
-                <%--Here we set `postit` as a singular item out of the list `postitNotes`--%>
-                <c:forEach var="day" items="${days}">
-                    <tr>
-                        <%--We can reference attributes of the Entity by just entering the name we gave--%>
-                        <%--it in the singular item var, and then just a dot followed by the attribute name--%>
-
-                        <%--Create a link based on the name attribute value--%>
-                        <td><a href="/days/${day.date}">${day.date}</a></td>
-                        <%--The String in the note attribute--%>
-                        <td>${day.note}</td>
-                    </tr>
-                </c:forEach>
-            </table>
-        </c:when>
-
-        <%--If all tests are false, then do this--%>
-        <c:otherwise>
-            <h3>No notes!</h3>
-        </c:otherwise>
-    </c:choose>
 
     </body>
 </html>
