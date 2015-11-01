@@ -7,39 +7,38 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
-import project.persistence.entities.PostitNote;
-import project.persistence.repositories.PostitNoteRepository;
-import project.service.PostitNoteService;
+import project.persistence.entities.Day;
+import project.persistence.repositories.DayRepository;
+import project.service.DayService;
 
 @Controller
-public class PostitNoteController {
+public class DayController {
 
     // Instance Variables
-    PostitNoteService postitNoteService;
+    DayService dayService;
 
     // Dependency Injection
     @Autowired
-    public PostitNoteController(PostitNoteService postitNoteService) {
-        this.postitNoteService = postitNoteService;
+    public DayController(DayService dayService) {
+        this.dayService = dayService;
     }
 
     // Method that returns the correct view for the URL /postit
     // This handles the GET request for this URL
     // Notice the `method = RequestMethod.GET` part
-    @RequestMapping(value = "/postit", method = RequestMethod.GET)
-    public String postitNoteViewGet(Model model){
-    	
-    	
+    @RequestMapping(value = "/day", method = RequestMethod.GET)
+    public String dayViewGet(Model model){
+
         // Add a new Postit Note to the model for the form
         // If you look at the form in PostitNotes.jsp, you can see that we
         // reference this attribute there by the name `postitNote`.
-        model.addAttribute("postitNote",new PostitNote());
+        model.addAttribute("day",new Day());
 
         // Here we get all the Postit Notes (in a reverse order) and add them to the model
-        model.addAttribute("postitNotes",postitNoteService.findAllReverseOrder());
+        model.addAttribute("day",dayService.findAllByOrderByIdDesc());
 
         // Return the view
-        return "postitnotes/PostitNotes";
+        return "day/Days";
     }
 
     // Method that receives the POST request on the URL /postit
@@ -48,27 +47,25 @@ public class PostitNoteController {
     // we can save the postit note because we get the data that was entered
     // into the form.
     // Notice the `method = RequestMethod.POST` part
-    @RequestMapping(value = "/postit", method = RequestMethod.POST)
-    public String postitNoteViewPost(@ModelAttribute("postitNote") PostitNote postitNote,
+    @RequestMapping(value = "/day", method = RequestMethod.POST)
+    public String dayViewPost(@ModelAttribute("day") Day day,
                                      Model model){
-    	
-    	postitNoteService.deleteByName();
+    	String date = day.getDate();
+    	dayService.deleteByDate(date);
+
         // Save the Postit Note that we received from the form
-        postitNoteService.save(postitNote);
-        
-        
-        
+        dayService.save(day);
 
         // Here we get all the Postit Notes (in a reverse order) and add them to the model
-        model.addAttribute("postitNotes", postitNoteService.findAllReverseOrder());
+        model.addAttribute("days", dayService.findAllByOrderByIdDesc());
 
         // Add a new Postit Note to the model for the form
         // If you look at the form in PostitNotes.jsp, you can see that we
         // reference this attribute there by the name `postitNote`.
-        model.addAttribute("postitNote", new PostitNote());
+        model.addAttribute("day", new Day());
 
         // Return the view
-        return "postitnotes/PostitNotes";
+        return "days/Days";
     }
 
     // Method that returns the correct view for the URL /postit/{name}
@@ -77,19 +74,19 @@ public class PostitNoteController {
     // based on the data that we have.
     // This method finds all Postit Notes posted by someone with the requested {name}
     // and returns a list with all those Postit Notes.
-    @RequestMapping(value = "/postit/{name}", method = RequestMethod.GET)
-    public String postitNoteGetNotesFromName(@PathVariable String name,
+    @RequestMapping(value = "/day/{date}", method = RequestMethod.GET)
+    public String daysGetNotesFromDate(@PathVariable String date,
                                              Model model){
 
         // Get all Postit Notes with this name and add them to the model
-        model.addAttribute("postitNotes", postitNoteService.findByName(name));
+        model.addAttribute("days", dayService.findByDate(date));
 
         // Add a new Postit Note to the model for the form
         // If you look at the form in PostitNotes.jsp, you can see that we
         // reference this attribute there by the name `postitNote`.
-        model.addAttribute("postitNote", new PostitNote());
+        model.addAttribute("day", new Day());
 
         // Return the view
-        return "postitnotes/PostitNotes";
+        return "days/Days";
     }
 }

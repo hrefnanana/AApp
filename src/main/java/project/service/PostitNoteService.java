@@ -44,5 +44,7 @@ public interface PostitNoteService {
      * @return All {@link PostitNote}s with the {@link String name} passed
      */
     List<PostitNote> findByName(String name);
+    
+    void deleteByName();
 
 }

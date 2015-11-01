@@ -56,4 +56,9 @@ public class PostitNoteServiceImplementation implements PostitNoteService {
     public List<PostitNote> findByName(String name) {
         return repository.findByName(name);
     }
+    
+    @Override
+    public void deleteByName() {
+        repository.deleteByName();
+    }
 }
