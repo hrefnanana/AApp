@@ -44,5 +44,7 @@ public interface DayService {
      * @return All {@link Day}s with the {@link String date} passed
      */
     List<Day> findByDate(String date);
+    
+    void deleteByDate(String date);
 
 }

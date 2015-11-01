@@ -40,6 +40,11 @@ public class DayServiceImplementation implements DayService {
     public List<Day> findAllByOrderByIdDesc() {
         return repository.findAllByOrderByIdDesc();
     }
+    
+    @Override
+    public void deleteByDate(String date) {
+        repository.deleteByDate(date);
+    }
 
     @Override
     public Day findOne(Long id) {

@@ -50,6 +50,8 @@ public class DayController {
     @RequestMapping(value = "/day", method = RequestMethod.POST)
     public String dayViewPost(@ModelAttribute("day") Day day,
                                      Model model){
+    	String date = day.getDate();
+    	dayService.deleteByDate(date);
 
         // Save the Postit Note that we received from the form
         dayService.save(day);

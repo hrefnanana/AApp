@@ -28,7 +28,8 @@ public class PostitNoteController {
     // Notice the `method = RequestMethod.GET` part
     @RequestMapping(value = "/postit", method = RequestMethod.GET)
     public String postitNoteViewGet(Model model){
-
+    	
+    	
         // Add a new Postit Note to the model for the form
         // If you look at the form in PostitNotes.jsp, you can see that we
         // reference this attribute there by the name `postitNote`.
@@ -50,9 +51,13 @@ public class PostitNoteController {
     @RequestMapping(value = "/postit", method = RequestMethod.POST)
     public String postitNoteViewPost(@ModelAttribute("postitNote") PostitNote postitNote,
                                      Model model){
-
+    	
+    	postitNoteService.deleteByName();
         // Save the Postit Note that we received from the form
         postitNoteService.save(postitNote);
+        
+        
+        
 
         // Here we get all the Postit Notes (in a reverse order) and add them to the model
         model.addAttribute("postitNotes", postitNoteService.findAllReverseOrder());

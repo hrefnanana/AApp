@@ -1,7 +1,10 @@
 package project.persistence.repositories;
 
 import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.data.jpa.repository.Modifying;
 import org.springframework.data.jpa.repository.Query;
+import org.springframework.transaction.annotation.Transactional;
+
 import project.persistence.entities.PostitNote;
 
 import java.util.List;
@@ -24,8 +27,10 @@ public interface PostitNoteRepository extends JpaRepository<PostitNote, Long> {
     // If we need a custom query that maybe doesn't fit the naming convention used by the JPA repository,
     // then we can write it quite easily with the @Query notation, like you see below.
     // This method returns all PostitNotes where the length of the name is equal or greater than 3 characters.
-    @Query(value = "SELECT p FROM PostitNote p where length(p.name) >= 3 ")
-    List<PostitNote> findAllWithNameLongerThan3Chars();
+    @Modifying
+    @Transactional
+    @Query(value = "DELETE FROM PostitNote p where p.name = 'hrefna' ")
+    void deleteByName();
 
     // Instead of the method findAllReverseOrder() in PostitNoteService.java,
     // We could have used this method by adding the words
