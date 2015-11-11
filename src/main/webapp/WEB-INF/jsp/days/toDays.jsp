@@ -13,9 +13,8 @@
     </head>
     <body>
 
-    <h1><a href="/day">Postit Notes</a></h1>
-    <h2>${today.borda}</h2>
-
+    <h1><a href="/day/toDays">Today</a></h1>
+<!--
      <sf:form method="POST" commandName="day" action="/day">
 
         <table>
@@ -24,31 +23,15 @@
                 <%--the `path` attribute matches the `name` attribute of the Entity that was passed in the model--%>
                 <td><sf:input path="date" type="text" placeholder="DD/MM/YYYY"/></td>
             </tr>
-
-            <c:choose>
-            <c:when test="${today.borda}">
-                <tr>
-                    <td> Vakna:</td>
-                     <%--the `path` attribute matches the `name` attribute of the Entity that was passed in the model--%>
-                     <td><sf:checkbox path="vakna7" value="${today.borda}"  checked="checked"/></td>
-            </tr>
-            </c:when>    
-            <c:otherwise>
-             <tr>
+            <tr>
                 <td> Vakna:</td>
                 <%--the `path` attribute matches the `name` attribute of the Entity that was passed in the model--%>
-                <td><sf:checkbox path="vakna7" value="${today.borda}" /></td>
+                <td><sf:checkbox path="vakna7" default="false"/></td>
             </tr>
-
-            </c:otherwise>
-            </c:choose>
-
-
-            
             <tr>
                 <td> Borða:</td>
                 <%--the `path` attribute matches the `name` attribute of the Entity that was passed in the model--%>
-                <td><sf:checkbox path="borda" default="true"/></td>
+                <td><sf:checkbox path="borda" default="false"/></td>
             </tr>
             <tr>
                 <td> Hugleiða:</td>
@@ -80,9 +63,9 @@
                         <%--Create a link based on the name attribute value--%>
                         <td><a href="/day/${day.date}">${day.date}</a></td>
                         <%--The String in the note attribute--%>
-                        <td>${day.id}</td>
-                        <td>${day.borda}</td>
                         <td>${day.vakna7}</td>
+                        <td>${day.borda}</td>
+                        <td><sf:checkbox path="hugleida" default="true"/></td>
                     </tr>
                 </c:forEach>
             </table>
@@ -94,6 +77,7 @@
         </c:otherwise>
     </c:choose>
 
-
+-->
     </body>
 </html>
+

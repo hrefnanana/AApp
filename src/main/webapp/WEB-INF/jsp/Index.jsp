@@ -15,7 +15,7 @@
 
     <ul>
         <li><a href="/postit">Click here for Persistence Layer Demo</a></li>
-        <li><a href="/day/days">PRUFPRUFPRUFURPFURPFUR</a></li>
+        <li><a href="/day">PRUFPRUFPRUFURPFURPFUR</a></li>
     </ul>
     </body>
     <footer>Class HBV501G, University of Iceland, Fall 2015</footer>
