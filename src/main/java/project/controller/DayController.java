@@ -28,17 +28,19 @@ public class DayController {
     // Notice the `method = RequestMethod.GET` part
     @RequestMapping(value = "/day", method = RequestMethod.GET)
     public String dayViewGet(Model model){
-
+    	System.out.println("whatwhat1");
         // Add a new Postit Note to the model for the form
         // If you look at the form in PostitNotes.jsp, you can see that we
         // reference this attribute there by the name `postitNote`.
         model.addAttribute("day",new Day());
 
         // Here we get all the Postit Notes (in a reverse order) and add them to the model
-        model.addAttribute("day",dayService.findAllByOrderByIdDesc());
+        //model.addAttribute("days",dayService.findAllByOrderByIdDesc());
+        model.addAttribute("today",dayService.findOne(Long.valueOf(21)));
+        System.out.println("whatwhat");
 
         // Return the view
-        return "day/Days";
+        return "days/Days";
     }
 
     // Method that receives the POST request on the URL /postit
@@ -52,6 +54,7 @@ public class DayController {
                                      Model model){
     	String date = day.getDate();
     	dayService.deleteByDate(date);
+    	System.out.println("whatwhat2");
 
         // Save the Postit Note that we received from the form
         dayService.save(day);
@@ -77,6 +80,7 @@ public class DayController {
     @RequestMapping(value = "/day/{date}", method = RequestMethod.GET)
     public String daysGetNotesFromDate(@PathVariable String date,
                                              Model model){
+    	System.out.println("whatwhat3");
 
         // Get all Postit Notes with this name and add them to the model
         model.addAttribute("days", dayService.findByDate(date));
