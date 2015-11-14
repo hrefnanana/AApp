@@ -30,14 +30,14 @@
                 <tr>
                     <td> Vakna:</td>
                      <%--the `path` attribute matches the `name` attribute of the Entity that was passed in the model--%>
-                     <td><sf:checkbox path="vakna7" value="${today.borda}"  checked="checked"/></td>
+                     <td><sf:checkbox path="vakna7"  checked="checked"/></td>
             </tr>
             </c:when>    
             <c:otherwise>
              <tr>
                 <td> Vakna:</td>
                 <%--the `path` attribute matches the `name` attribute of the Entity that was passed in the model--%>
-                <td><sf:checkbox path="vakna7" value="${today.borda}" /></td>
+                <td><sf:checkbox path="vakna7"  /></td>
             </tr>
 
             </c:otherwise>
