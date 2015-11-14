@@ -13,6 +13,10 @@
     </head>
     <body>
 
+    <br>
+    <p>I dag er : ${time}</p>
+    <br>
+
     <h1><a href="/day">Postit Notes</a></h1>
     <h2>${today.borda}</h2>
 
