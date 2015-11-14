@@ -28,6 +28,8 @@ public class DayController {
     // Notice the `method = RequestMethod.GET` part
     @RequestMapping(value = "/day", method = RequestMethod.GET)
     public String dayViewGet(Model model){
+    	
+    	
     	System.out.println("whatwhat1");
         // Add a new Postit Note to the model for the form
         // If you look at the form in PostitNotes.jsp, you can see that we
