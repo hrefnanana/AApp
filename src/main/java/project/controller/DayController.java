@@ -91,7 +91,7 @@ public class DayController {
     // based on the data that we have.
     // This method finds all Postit Notes posted by someone with the requested {name}
     // and returns a list with all those Postit Notes.
-    @RequestMapping(value = "/day/{date}", method = RequestMethod.GET)
+    @RequestMapping(value = "/day/{date}", method = RequestMethod.GET, produces = "text/plain;charset=UTF-8")
     public String daysGetNotesFromDate(@PathVariable String date,
                                              Model model){
     	System.out.println("whatwhat3");

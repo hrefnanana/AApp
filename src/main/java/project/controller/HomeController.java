@@ -1,5 +1,8 @@
 package project.controller;
 
+import java.time.LocalDate;
+import java.time.Period;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -24,8 +27,15 @@ public class HomeController {
     // is running and you enter "localhost:8080" into a browser, this
     // method is called
     @RequestMapping(value = "/", method = RequestMethod.GET)
-    public String home(){
-
+    public String home(Model model){	
+    	
+    	 LocalDate soberDate = LocalDate.of(2014, 6, 29);
+    	 LocalDate dateToday = LocalDate.now();
+    //	 int soberCounter = dateToday.compareTo(soberDate);
+    	 Period soberCounter = soberDate.until(dateToday);
+    			 
+    	 model.addAttribute("soberCounter",soberCounter);
+    	 
         // The string "Index" that is returned here is the name of the view
         // (the Index.jsp file) that is in the path /main/webapp/WEB-INF/jsp/
         // If you change "Index" to something else, be sure you have a .jsp
