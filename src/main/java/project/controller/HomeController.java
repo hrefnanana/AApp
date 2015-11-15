@@ -31,10 +31,14 @@ public class HomeController {
     	
     	 LocalDate soberDate = LocalDate.of(2014, 6, 29);
     	 LocalDate dateToday = LocalDate.now();
-    //	 int soberCounter = dateToday.compareTo(soberDate);
     	 Period soberCounter = soberDate.until(dateToday);
+    	 int years = soberCounter.getYears();
+ 		 int months = soberCounter.getMonths();
+ 		 int days = soberCounter.getDays();
     			 
-    	 model.addAttribute("soberCounter",soberCounter);
+    	 model.addAttribute("years",years);
+    	 model.addAttribute("days",days);
+    	 model.addAttribute("months",months);
     	 
         // The string "Index" that is returned here is the name of the view
         // (the Index.jsp file) that is in the path /main/webapp/WEB-INF/jsp/

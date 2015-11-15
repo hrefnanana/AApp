@@ -20,7 +20,8 @@
 
     <h1>Velkomin (breyta med nafninu) </h1>
     <h2> Sobercounter: ${soberCounter} </h2>
-    <p>This skeleton of a Spring Boot Web project was made to help groups get started on their projects without to much hassle.</p>
+
+    <p>You have been sober for <span >${days}</span> days, <span >${months} </span> months and <span >${years}</span> years</p>
 
     <ul>
         <li><a href="/postit">Click here for Persistence Layer Demo</a></li>
