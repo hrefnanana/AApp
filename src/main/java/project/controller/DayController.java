@@ -1,5 +1,7 @@
 package project.controller;
 
+import java.time.LocalDate;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -31,6 +33,14 @@ public class DayController {
     	
     	
     	System.out.println("whatwhat1");
+    	
+    	// the date today in the format YYYYMMDD
+    	// ætti kannski að vera global gæi?
+    	// hvað gerist líka á miðnætti? hvaða time zone er miðað við
+    	LocalDate ldt = LocalDate.now();
+    	String time = ldt.toString();
+    	time = time.replace("-", "");
+    	
         // Add a new Postit Note to the model for the form
         // If you look at the form in PostitNotes.jsp, you can see that we
         // reference this attribute there by the name `postitNote`.
@@ -39,7 +49,9 @@ public class DayController {
         // Here we get all the Postit Notes (in a reverse order) and add them to the model
         //model.addAttribute("days",dayService.findAllByOrderByIdDesc());
         model.addAttribute("today",dayService.findOne(Long.valueOf(21)));
+        model.addAttribute("time", time);
         System.out.println("whatwhat");
+        
 
         // Return the view
         return "days/Days";
@@ -79,7 +91,7 @@ public class DayController {
     // based on the data that we have.
     // This method finds all Postit Notes posted by someone with the requested {name}
     // and returns a list with all those Postit Notes.
-    @RequestMapping(value = "/day/{date}", method = RequestMethod.GET)
+    @RequestMapping(value = "/day/{date}", method = RequestMethod.GET, produces = "text/plain;charset=UTF-8")
     public String daysGetNotesFromDate(@PathVariable String date,
                                              Model model){
     	System.out.println("whatwhat3");
