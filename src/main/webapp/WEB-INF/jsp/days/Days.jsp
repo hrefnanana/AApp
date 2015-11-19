@@ -3,6 +3,8 @@
 <%@ taglib prefix="spring" uri="http://www.springframework.org/tags"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@ taglib prefix="sf" uri="http://www.springframework.org/tags/form" %>
+<%@page contentType="text/html; charset=UTF-8" %>
+
 
 <html lang="is">
     <head>
@@ -32,7 +34,7 @@
             </tr>
 
             <c:choose>
-            <c:when test="${today.borda}">
+            <c:when test="${today.vakna7}">
                 <tr>
                     <td> Vakna:</td>
                      <%--the `path` attribute matches the `name` attribute of the Entity that was passed in the model--%>
@@ -49,18 +51,41 @@
             </c:otherwise>
             </c:choose>
 
-
-            
-            <tr>
+            <c:choose>
+            <c:when test="${today.borda}">
+                <tr>
+                    <td> Borða:</td>
+                     <%--the `path` attribute matches the `name` attribute of the Entity that was passed in the model--%>
+                     <td><sf:checkbox path="borda"  checked="checked"/></td>
+            </tr>
+            </c:when>    
+            <c:otherwise>
+             <tr>
                 <td> Borða:</td>
                 <%--the `path` attribute matches the `name` attribute of the Entity that was passed in the model--%>
-                <td><sf:checkbox path="borda" default="true"/></td>
+                <td><sf:checkbox path="borda"  /></td>
             </tr>
-            <tr>
+
+            </c:otherwise>
+            </c:choose>
+
+            <c:choose>
+            <c:when test="${today.hugleida}">
+                <tr>
+                    <td> Hugleiða:</td>
+                     <%--the `path` attribute matches the `name` attribute of the Entity that was passed in the model--%>
+                     <td><sf:checkbox path="hugleida"  checked="checked"/></td>
+            </tr>
+            </c:when>    
+            <c:otherwise>
+             <tr>
                 <td> Hugleiða:</td>
                 <%--the `path` attribute matches the `name` attribute of the Entity that was passed in the model--%>
-                <td><sf:checkbox path="hugleida" default="false"/></td>
+                <td><sf:checkbox path="hugleida"  /></td>
             </tr>
+
+            </c:otherwise>
+            </c:choose>
            
         </table>
 

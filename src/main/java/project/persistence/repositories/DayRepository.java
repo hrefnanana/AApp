@@ -43,5 +43,5 @@ public interface DayRepository extends JpaRepository<Day, Long> {
 
     Day findOne(Long id);
 
-    List<Day> findByDate(String date);
+    Day findByDate(String date);
 }

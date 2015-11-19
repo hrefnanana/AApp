@@ -52,7 +52,7 @@ public class DayServiceImplementation implements DayService {
     }
 
     @Override
-    public List<Day> findByDate(String date) {
+    public Day findByDate(String date) {
         return repository.findByDate(date);
     }
 }

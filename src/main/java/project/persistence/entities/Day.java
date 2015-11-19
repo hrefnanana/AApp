@@ -72,6 +72,16 @@ public class Day {
     public void setHugleida(Boolean hugleida) {
         this.hugleida = hugleida;
     }
+    
+    public int getFinished() {
+    	int n = 0;
+    	
+    	if (this.borda) n++;
+    	if (this.vakna7) n++;
+    	if (this.hugleida) n++;
+    	
+    	return n;
+    }
    
  
     // This is for easier debug.
