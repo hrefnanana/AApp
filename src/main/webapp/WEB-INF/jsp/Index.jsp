@@ -12,24 +12,22 @@
         <link rel="stylesheet" href="/css/index.css">
     </head>
     <body>
-    <nav>
-        <li>Home</li>
-        <li>Me</li>
-        <li>Rules</li>
-        <li>12 steps</li>
-    </nav>
+        <nav>
+             <ul>
+                    <li><a href='' class="links">Home</a></li>
+                    <li><a href='/user' class="links">Me</a></li>
+                    <li><a href='' class="links">Rules</a></li>
+                    <li><a href='' class="links">12 steps</a></li>
+                </ul>
+        </nav>
+
+        <main>
+            <h1>Velkomin (breyta med nafninu) </h1>
+            <h2> Sobercounter: ${soberCounter} </h2>
+
+            <p>You have been sober for <span >${days}</span> days, <span >${months} </span> months and <span >${years}</span> years</p>
 
 
-    <h1>Velkomin (breyta med nafninu) </h1>
-    <h2> Sobercounter: ${soberCounter} </h2>
-
-    <p>You have been sober for <span >${days}</span> days, <span >${months} </span> months and <span >${years}</span> years</p>
-
-    <ul>
-        <li><a href="/postit">Click here for Persistence Layer Demo</a></li>
-        <li><a href="/day">PRUFPRUFPRUFURPFURPFUR</a></li>
-        <li><a href="/longterm">longtermtjékk</a></li>
-    </ul>
     </body>
     <footer>Class HBV501G, University of Iceland, Fall 2015</footer>
 </html>
