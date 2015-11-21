@@ -10,11 +10,14 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.SessionAttributes;
+
 import project.persistence.entities.*;
 import project.persistence.repositories.DayRepository;
 import project.service.DayService;
 
 @Controller
+@SessionAttributes("longterm")
 public class LongtermController {
 
     // Instance Variables
@@ -43,11 +46,6 @@ public class LongtermController {
         // Add a new Postit Note to the model for the form
         // If you look at the form in PostitNotes.jsp, you can see that we
         // reference this attribute there by the name `postitNote`.
-        model.addAttribute("day",new Day());
-        
-        long numberOfDays = 0;
-        
-        model.addAttribute("numberOfDays",numberOfDays);
 
         // Here we get all the Postit Notes (in a reverse order) and add them to the model
         //model.addAttribute("days",dayService.findAllByOrderByIdDesc());
@@ -61,7 +59,9 @@ public class LongtermController {
     }
 
     @RequestMapping(value = "/longterm", method = RequestMethod.POST)
+    
     public String dayViewPost(@ModelAttribute("longterm") Longterm longterm,
+    		
                                      Model model){
     	
 
@@ -85,16 +85,32 @@ public class LongtermController {
         	
         }
         longterm.addDays(Days);
+        model.addAttribute("longterm",longterm);
+        System.out.println(longterm.getNumberOfDays());
         // Here we get all the Postit Notes (in a reverse order) and add them to the model
-        model.addAttribute("days", dayService.findAllByOrderByIdDesc());
+        
 
         // Add a new Postit Note to the model for the form
         // If you look at the form in PostitNotes.jsp, you can see that we
         // reference this attribute there by the name `postitNote`.
-        model.addAttribute("day", new Day());
 
         // Return the view
-        return "longterm/longterm";
+        return "redirect:/longterm/progress";
+    }
+    
+    @RequestMapping(value = "/longterm/progress", method = RequestMethod.GET)
+    public String progressViewGet(@ModelAttribute("longterm") Longterm longterm,
+            Model model){
+    	
+    	
+    	
+        model.addAttribute("days",longterm.getDays());
+        System.out.println(longterm.getNumberOfDays());
+        System.out.println("wahtatha");
+        
+
+        // Return the view
+        return "longterm/progress";
     }
     
 }
