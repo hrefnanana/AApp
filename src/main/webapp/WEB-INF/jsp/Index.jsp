@@ -5,29 +5,57 @@
 <%@page contentType="text/html; charset=UTF-8" %>
 
 
-<html lang="en">
-<!--src/main/resources/static-->
-    <head>
-        <title>AApp</title>
-        <link rel="stylesheet" href="/css/index.css">
-    </head>
-    <body>
-        <nav>
-             <ul>
-                    <li><a href='' class="links">Home</a></li>
-                    <li><a href='/user' class="links">Me</a></li>
-                    <li><a href='' class="links">Rules</a></li>
-                    <li><a href='' class="links">12 steps</a></li>
-                </ul>
-        </nav>
-
-        <main>
-            <h1>Velkomin (breyta med nafninu) </h1>
-            <h2> Sobercounter: ${soberCounter} </h2>
-
-            <p>You have been sober for <span >${days}</span> days, <span >${months} </span> months and <span >${years}</span> years</p>
-
-
-    </body>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>AApp</title>
+    
+    <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js">
+    <link rel="stylesheet" href="/css/index.css">
+  </head>
+  <body data-spy="scroll" data-target=".navbar-fixed-top">
+    <nav class="navbar custom navbar-default header">
+      <div class="container-fluid">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+          <span class="sr-only">Toggle navigation</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand active" href="index.html"><span class ="glyphicon glyphicon-home"></span> Heim</a>
+          <a class="navbar-brand" href="days.html"><span class ="glyphicon glyphicon-check"></span> Skrá Daga</a>
+          <a class="navbar-brand" href="arangur.html"><span class ="glyphicon glyphicon-search"></span> Árangur</a>
+          <a class="navbar-brand" href="12spor.html"><span class ="glyphicon glyphicon-book"></span> 12 spor</a>
+          <a class="navbar-brand" href="about.html"><span class ="glyphicon glyphicon-user"></span> Um Mig</a>
+          <a class="navbar-brand left" href="login.html"><span class ="glyphicon glyphicon-user"></span> Innskrá/Útskrá </span></a>
+          
+        </div>
+      </div>
+    </nav>
+    <div class="container-fluid jumbotron text-center">
+      <h1>Velkominn Jón </h1>
+      <h2> Teljari: ${soberCounter} </h2>
+      <div class="well">
+        <p>Þú hefur verið edrú í  <span >${days}</span> daga, <span >${months} </span> mánuði og <span >${years}</span> ár!</p>
+      </div>
+      <button href="#" type="button" class="btn btn-lg btn-lg">
+      <span class="glyphicon glyphicon-check">
+      </span> Skrá Daga
+      </button>
+      <button href="#" type="button" class="btn btn-lg btn-lg">
+      <span class="glyphicon glyphicon-search">
+      </span> Skoða árangur
+      </button>
+    </div>
+    <ul>
+      <li><a href="/postit">Click here for Persistence Layer Demo</a></li>
+      <li><a href="/day">PRUFPRUFPRUFURPFURPFUR</a></li>
+    </ul>
+  </body>
     <footer>Class HBV501G, University of Iceland, Fall 2015</footer>
 </html>
