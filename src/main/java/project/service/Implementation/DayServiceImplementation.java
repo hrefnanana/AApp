@@ -55,4 +55,6 @@ public class DayServiceImplementation implements DayService {
     public List<Day> findByDate(String date) {
         return repository.findByDate(date);
     }
+
+
 }
