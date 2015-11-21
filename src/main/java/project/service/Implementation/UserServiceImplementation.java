@@ -10,34 +10,34 @@ import java.util.Collections;
 import java.util.List;
 
 @Service
-public class DayServiceImplementation implements DayService {
+public class UserServiceImplementation implements UserService {
 
     // Instance Variables
-	DayRepository repository;
+	UserRepository repository;
 
     // Dependency Injection
     @Autowired
-    public DayServiceImplementation(DayRepository repository) {
+    public UserServiceImplementation(UserRepository repository) {
         this.repository = repository;
     }
 
     @Override
-    public Day save(Day day) {
-        return repository.save(day);
+    public User save(User user) {
+        return repository.save(user);
     }
 
     @Override
-    public void delete(Day day) {
-        repository.delete(day);
+    public void delete(User user) {
+        repository.delete(user);
     }
 
     @Override
-    public List<Day> findAll() {
+    public List<User> findAll() {
         return repository.findAll();
     }
 
     @Override
-    public List<Day> findAllByOrderByIdDesc() {
+    public List<User> findAllByOrderByIdDesc() {
         return repository.findAllByOrderByIdDesc();
     }
     
@@ -47,14 +47,24 @@ public class DayServiceImplementation implements DayService {
     }
 
     @Override
-    public Day findOne(Long id) {
+    public User findOne(Long id) {
         return repository.findOne(id);
     }
 
     @Override
-    public Day findByDate(String date) {
+    public List<User> findByDate(String date) {
         return repository.findByDate(date);
     }
 
+	@Override
+	public String doesExist(String username) {
+		return repository.doesExist(username);
+	}
 
+	@Override
+	public String checkIfMatch(String username, String password) {
+		return repository.checkIfMatch(username, password);
+	}
+
+	
 }
