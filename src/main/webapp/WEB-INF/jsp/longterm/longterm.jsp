@@ -2,6 +2,7 @@
 
 <%@ taglib prefix="spring" uri="http://www.springframework.org/tags"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<%@ taglib prefix="sf" uri="http://www.springframework.org/tags/form" %>
 <%@page contentType="text/html; charset=UTF-8" %>
 
 
@@ -48,11 +49,12 @@
             <h4>Það eru ${today.getFinished()} atriði búnir í dag! </h4>
           	</div>
           	<div class="control-group">
-            	<label class="control-label"  for="longterm">Hversu marga daga viltu skoða?
+            	<label class="control-label"  for="longterm">Hversu marga daga viltu skoða?</label>
             	<div class="controls">
+                <!-- numberOfDays-->
               		<sf:input type="text" path="numberOfDays" placeholder="nanananananan" class="input-xlarge"/>
            		 </div>
-           		 </label>
+           		 
           	</div>
           	
           	<div class="control-group">
@@ -60,6 +62,7 @@
             	<div class="controls">
               		<input type="submit" value="Skoða" class="btn button"/>
            		</div>
+
           	</div>
         </fieldset>
       </sf:form>

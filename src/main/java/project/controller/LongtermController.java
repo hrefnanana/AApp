@@ -110,12 +110,18 @@ public class LongtermController {
         int numberOfDays = longterm.getNumberOfDays();
         LocalDate ldt = LocalDate.now();
     	String time = ldt.toString();
+    	ArrayList<String> Dates = new ArrayList<String>();
         for(int i = 0; i<numberOfDays; i++){
         	System.out.println(time+" "+i+" "+ldt);
         	ldt  = ldt.minusDays(Long.valueOf(1));
-        	time = ldt.toString();
+        	int day = ldt.getDayOfMonth();
+        	int month = ldt.getMonthValue();
+        	int year = ldt.getYear();
+        	String date = day+"-"+month+"-"+year;
+        	Dates.add(date);
         	
         }
+        model.addAttribute("dates",Dates);
         
 
         // Return the view
