@@ -18,12 +18,10 @@
           function drawChart() {
             var data = google.visualization.arrayToDataTable([
               ['Dagsetning',  'Heildaratriði búin'],
-              <c:set var="total" value="${0}"/>
-              <c:forEach var="day" items="${days}">
-                <c:set var="total" value="${total + day.getFinished()}" />
-                ['${day.date}', ${total}],
-              </c:forEach>
-            ]);
+              
+                ${data}
+              
+              ]);
 
             var options = {
               title: 'Titill',

@@ -75,7 +75,7 @@ public class LongtermController {
     	ArrayList<Day> Days = new ArrayList<Day>();
         
         model.addAttribute("longterm",new Longterm());
-        for(int i = 0; i<=numberOfDays; i++){
+        for(int i = 0; i<numberOfDays; i++){
         	
         	Days.add(dayService.findByDate(time));
         	System.out.println(time+" "+i+" "+ldt);
@@ -105,8 +105,30 @@ public class LongtermController {
     	
     	
         model.addAttribute("days",longterm.getDays());
-        System.out.println(longterm.getNumberOfDays());
-        System.out.println("wahtatha");
+        int numberOfDays = longterm.getNumberOfDays();
+        LocalDate ldt = LocalDate.now();
+    	String time = ldt.toString();
+    	String Data = "";
+    	ArrayList<Day> Days = new ArrayList<Day>();
+    	Days = longterm.getDays();
+    	int total = 0;
+    	Day tempday;
+        for(int i = 0; i<numberOfDays; i++){
+        	System.out.println(time+" "+i+" "+ldt);
+        	ldt  = ldt.minusDays(Long.valueOf(1));
+        	int day = ldt.getDayOfMonth();
+        	int month = ldt.getMonthValue();
+        	int year = ldt.getYear();
+        	String date = day+"-"+month+"-"+year;
+        	tempday = Days.remove(0);
+        	if(tempday!=null){
+        		total = total + tempday.getFinished();
+        	}
+        	Data = Data + "['"+date+"',"+total+"]," ;
+        	System.out.println(Data);
+        	
+        }
+        model.addAttribute("data",Data);
         
 
         // Return the view
