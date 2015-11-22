@@ -1,6 +1,7 @@
 package project.persistence.entities;
 
 import javax.persistence.*;
+import java.util.*;
 
 @Entity
 @Table(name = "userInfo") // If you want to specify a table name, you can do so here
@@ -18,6 +19,7 @@ public class User {
     private String soberday;
     private String sobermonth;
     private String soberyear;
+
   
    
     // Notice the empty constructor, because we need to be able to create an empty PostitNote to add
@@ -36,6 +38,8 @@ public class User {
         this.soberyear = soberyear;
     }
     
+    
+
     
     public Long getId() {
     	return this.id;
