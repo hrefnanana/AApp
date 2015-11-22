@@ -52,11 +52,10 @@ public class UserController {
     	String firstName = user.getFirstName();
     	String lastName = user.getLastName();
     	String userName = user.getUserName();
-    	String soberDate = user.getSoberDate();
     	String password = user.getPassword();
+    
 
     	System.out.println("Það var ýtt mér: POST" + " " +  firstName + " " + lastName);
-    	System.out.println(soberDate);
     	System.out.println(userName);
     	System.out.println(password);
     	System.out.println(lastName);

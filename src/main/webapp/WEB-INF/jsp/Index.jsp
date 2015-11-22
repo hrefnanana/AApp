@@ -38,7 +38,10 @@
       </div>
     </nav>
     <div class="container-fluid jumbotron text-center">
-      <h1>Velkominn Jón </h1>
+
+      <h1>Velkominn ${name} </h1>
+      <h2> Teljari: ${soberCounter} </h2>
+
       <div class="well">
         <p>Þú hefur verið edrú í  <span >${days}</span> daga, <span >${months} </span> mánuði og <span >${years}</span> ár!</p>
       </div>

@@ -62,8 +62,8 @@ public class UserServiceImplementation implements UserService {
 	}
 
 	@Override
-	public String checkIfMatch(String username, String password) {
-		return repository.checkIfMatch(username, password);
+	public User findByUserNameAndPassword(String username, String password) {
+		return repository.findByUserNameAndPassword(username, password);
 	}
 
 	
