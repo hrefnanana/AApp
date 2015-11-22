@@ -75,7 +75,7 @@ public class LongtermController {
     	ArrayList<Day> Days = new ArrayList<Day>();
         
         model.addAttribute("longterm",new Longterm());
-        for(int i = 0; i<=numberOfDays; i++){
+        for(int i = 0; i<numberOfDays; i++){
         	
         	Days.add(dayService.findByDate(time));
         	System.out.println(time+" "+i+" "+ldt);
@@ -107,6 +107,15 @@ public class LongtermController {
         model.addAttribute("days",longterm.getDays());
         System.out.println(longterm.getNumberOfDays());
         System.out.println("wahtatha");
+        int numberOfDays = longterm.getNumberOfDays();
+        LocalDate ldt = LocalDate.now();
+    	String time = ldt.toString();
+        for(int i = 0; i<numberOfDays; i++){
+        	System.out.println(time+" "+i+" "+ldt);
+        	ldt  = ldt.minusDays(Long.valueOf(1));
+        	time = ldt.toString();
+        	
+        }
         
 
         // Return the view
