@@ -45,6 +45,7 @@ public class DayController {
         // If you look at the form in PostitNotes.jsp, you can see that we
         // reference this attribute there by the name `postitNote`.
         model.addAttribute("day",new Day());
+        
 
         // Here we get all the Postit Notes (in a reverse order) and add them to the model
         //model.addAttribute("days",dayService.findAllByOrderByIdDesc());
@@ -66,8 +67,12 @@ public class DayController {
     @RequestMapping(value = "/day", method = RequestMethod.POST)
     public String dayViewPost(@ModelAttribute("day") Day day,
                                      Model model){
-    	String date = day.getDate();
-    	dayService.deleteByDate(date);
+    	
+    	LocalDate ldt = LocalDate.now();
+    	String time = ldt.toString();
+    	time = time.replace("-", "");
+    	day.setDate(time);
+    	dayService.deleteByDate(time);
     	System.out.println("whatwhat2");
 
         // Save the Postit Note that we received from the form

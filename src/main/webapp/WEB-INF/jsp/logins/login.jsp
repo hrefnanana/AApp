@@ -41,13 +41,13 @@
         <fieldset>
           <div id="legend">
             <h3>Innskrá</h3>
-          </div>
-          <div class="control-group">
-            <label class="control-label"  for="username">Notendanafn</label>
-            <div class="controls">
-              <sf:input path="userName" placeholder="Notendanafn" class="input-xlarge"/>
-            </div>
-          </div>
+          	</div>
+          	<div class="control-group">
+            	<label class="control-label"  for="username">Notendanafn</label>
+            	<div class="controls">
+              		<sf:input path="userName" placeholder="Notendanafn" class="input-xlarge"/>
+           		 </div>
+          	</div>
           <div class="control-group">
             <!-- Password-->
             <label class="control-label" for="password">Lykilorð</label>

@@ -19,7 +19,16 @@ public class Day {
     private Boolean vakna7;
     private Boolean hugleida;
     private Boolean borda;
-   
+    private Boolean stundvisi;
+    private Boolean tiltekt;
+    private Boolean aabok;
+    private Boolean sofa;
+    private Boolean dagbok;
+    private Boolean bad;
+    private Boolean fundur;
+    private Boolean kurteis; 
+    private Boolean hreyfing;
+    
     // Notice the empty constructor, because we need to be able to create an empty PostitNote to add
     // to our model so we can use it with our form
     public Day() {
@@ -30,6 +39,15 @@ public class Day {
         this.vakna7 = vakna7;
         this.hugleida = hugleida;
         this.borda = borda;
+        this.stundvisi=stundvisi;
+        this.tiltekt=tiltekt;
+        this.aabok=aabok;
+        this.sofa=sofa;
+        this.dagbok=dagbok;
+        this.bad=bad;
+        this.fundur=fundur;
+        this.kurteis=kurteis;
+        this.hreyfing=hreyfing;
 
     }
  
@@ -73,12 +91,94 @@ public class Day {
         this.hugleida = hugleida;
     }
     
+    public Boolean getStundvisi() {
+        return stundvisi;
+    }
+ 
+    public void setStundvisi(Boolean stundvisi) {
+        this.stundvisi = stundvisi;
+    }
+    
+    public Boolean getTiltekt() {
+        return tiltekt;
+    }
+ 
+    public void setTiltekt(Boolean tiltekt) {
+        this.tiltekt = tiltekt;
+    }
+    
+    public Boolean getAabok() {
+        return aabok;
+    }
+ 
+    public void setAabok(Boolean aabok) {
+        this.aabok = aabok;
+    }
+    
+    public Boolean getSofa() {
+        return sofa;
+    }
+ 
+    public void setSofa(Boolean sofa) {
+        this.sofa = sofa;
+    }
+   
+    public Boolean getDagbok() {
+        return dagbok;
+    }
+ 
+    public void setDagbok(Boolean dagbok) {
+        this.dagbok = dagbok;
+    }
+    
+    public Boolean getbad() {
+        return bad;
+    }
+ 
+    public void setbad(Boolean bad) {
+        this.bad = bad;
+    }
+    
+    public Boolean getFundur() {
+        return fundur;
+    }
+ 
+    public void setFundur(Boolean fundur) {
+        this.fundur = fundur;
+    }
+    
+    public Boolean getKurteis() {
+        return kurteis;
+    }
+ 
+    public void setKurteis(Boolean kurteis) {
+        this.kurteis = kurteis;
+    }
+    
+    public Boolean getHreyfing() {
+        return hreyfing;
+    }
+ 
+    public void setHreyfing(Boolean hreyfing) {
+        this.hreyfing = hreyfing;
+    }
+    
+    
     public int getFinished() {
     	int n = 0;
     	
     	if (this.borda) n++;
     	if (this.vakna7) n++;
     	if (this.hugleida) n++;
+    	if (this.stundvisi) n++;
+    	if (this.tiltekt) n++;
+    	if (this.aabok) n++;
+    	if (this.sofa) n++;
+    	if (this.dagbok) n++;
+    	if (this.bad) n++;
+    	if (this.fundur) n++;
+    	if (this.kurteis) n++;
+    	if (this.hreyfing) n++;
     	
     	return n;
     }
