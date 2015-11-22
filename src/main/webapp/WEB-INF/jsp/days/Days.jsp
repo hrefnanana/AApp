@@ -42,6 +42,7 @@
       <div class="col-12">
         <div class="jumbotron">
         <h4 class="text-center"> Hakaðu við þau atriði sem þú hefur lokið við í dag</h4>
+        <h4>${today.vakna7}fd</h4>
 			<sf:form method="POST" commandName="day" action="/day" class="well">
 			
 			
@@ -87,7 +88,7 @@
                 
                 
            <c:choose>
-            <c:when test="${today.stundvis}">
+            <c:when test="${today.stundvisi}">
               <ul class="list-group checked-list-box">
                 <li class="list-group-item" data-color="info"><label> <sf:checkbox path="stundvisi" checked="checked"/> Í dag var ég stundvís </label></li>
               </ul>
