@@ -17,7 +17,6 @@
     <link rel="stylesheet" href="/css/login.css">
   </head>
     <body>
-<<<<<<< 613f239c1d5b326a7f61d298b488d076cc6ab1dc
     <nav class="navbar custom navbar-default header">
       <div class="container-fluid">
         <div class="navbar-header">
