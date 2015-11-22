@@ -42,11 +42,11 @@
       <div class="well">
         <p>Þú hefur verið edrú í  <span >${days}</span> daga, <span >${months} </span> mánuði og <span >${years}</span> ár!</p>
       </div>
-      <button href="/day" type="button" class="button btn btn-lg btn-lg">
+      <button onclick="location.href='/day'"  type="button" class="button btn btn-lg btn-lg">
       <span class="glyphicon glyphicon-check">
       </span> Skrá Daga
       </button>
-      <button href="/longterm" type="button" class="button btn btn-lg btn-lg">
+      <button onclick="location.href='/longterm'"  type="button" class="button btn btn-lg btn-lg">
       <span class="glyphicon glyphicon-search">
       </span> Skoða árangur
       </button>
