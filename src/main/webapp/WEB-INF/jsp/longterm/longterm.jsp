@@ -2,16 +2,19 @@
 
 <%@ taglib prefix="spring" uri="http://www.springframework.org/tags"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
-<%@ taglib prefix="sf" uri="http://www.springframework.org/tags/form" %>
 <%@page contentType="text/html; charset=UTF-8" %>
 
-<html lang="is">
-    <head>
-        <meta charset = "UTF-8">
-        <title>Postit Notes</title>
 
-        <link rel="stylesheet" type="text/css" href="<c:url value="/css/postitnote.css"/>"/>
-    </head>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>AApp</title>
+    
+    <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js">
+    <link rel="stylesheet" href="/css/index.css">
+    <link rel="stylesheet" href="/css/login.css">
+  </head>
     <body>
         <nav class="navbar custom navbar-default header">
       <div class="container-fluid">
@@ -35,26 +38,33 @@
         </div>
       </div>
     </nav>
-
-    
-
-    <h1>Longterm stoff</h1>
-
-    <div>Það eru ${today.getFinished()} hlutir búnir</div>
-
-
-    <sf:form method="POST" commandName="longterm" action="/longterm">
-        <table>
-            <tr>
-                <td> Days:</td>
-                <%--the `path` attribute matches the `name` attribute of the Entity that was passed in the model--%>
-                <td><sf:input path="numberOfDays" type="text" placeholder="0-9"/></td>
-            </tr>
-        </table>
-
-        <input type="submit" VALUE="Check it!"/>
-    </sf:form>
-
-
-    </body>
+<div class="container">
+    <div class="row jumbotron">
+    <div class="span12">
+      <sf:form class="form-horizontal" method="POST" commandName="longterm" action="/longterm">
+        <fieldset>
+          <div id="legend">
+            <h3>Árangur</h3>
+            <h4>Það eru ${today.getFinished()} atriði búnir í dag! </h4>
+          	</div>
+          	<div class="control-group">
+            	<label class="control-label"  for="longterm">Hversu marga daga viltu skoða?
+            	<div class="controls">
+              		<sf:input type="text" path="numberOfDays" placeholder="nanananananan" class="input-xlarge"/>
+           		 </div>
+           		 </label>
+          	</div>
+          	
+          	<div class="control-group">
+            <!-- Button -->
+            	<div class="controls">
+              		<input type="submit" value="Skoða" class="btn button"/>
+           		</div>
+          	</div>
+        </fieldset>
+      </sf:form>
+    </div>
+  </div>
+</div>
+</body>
 </html>
