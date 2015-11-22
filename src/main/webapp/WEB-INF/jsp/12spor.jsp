@@ -2,18 +2,20 @@
 
 <%@ taglib prefix="spring" uri="http://www.springframework.org/tags"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
-<%@ taglib prefix="sf" uri="http://www.springframework.org/tags/form" %>
 <%@page contentType="text/html; charset=UTF-8" %>
 
-<html lang="is">
-    <head>
-        <meta charset = "UTF-8">
-        <title>Postit Notes</title>
 
-        <link rel="stylesheet" type="text/css" href="<c:url value="/css/postitnote.css"/>"/>
-    </head>
-    <body>
-        <nav class="navbar custom navbar-default header">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>AApp</title>
+    
+    <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js">
+    <link rel="stylesheet" href="/css/index.css">
+  </head>
+  <body data-spy="scroll" data-target=".navbar-fixed-top">
+    <nav class="navbar custom navbar-default header">
       <div class="container-fluid">
         <div class="navbar-header">
           <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
@@ -35,26 +37,7 @@
         </div>
       </div>
     </nav>
-
     
-
-    <h1>Longterm stoff</h1>
-
-    <div>Það eru ${today.getFinished()} hlutir búnir</div>
-
-
-    <sf:form method="POST" commandName="longterm" action="/longterm">
-        <table>
-            <tr>
-                <td> Days:</td>
-                <%--the `path` attribute matches the `name` attribute of the Entity that was passed in the model--%>
-                <td><sf:input path="numberOfDays" type="text" placeholder="0-9"/></td>
-            </tr>
-        </table>
-
-        <input type="submit" VALUE="Check it!"/>
-    </sf:form>
-
-
-    </body>
+  </body>
+    <footer>Class HBV501G, University of Iceland, Fall 2015</footer>
 </html>

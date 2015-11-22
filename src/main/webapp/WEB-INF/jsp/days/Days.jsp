@@ -18,7 +18,7 @@
     <link rel="stylesheet" href="/css/days.css">
 </head>
  <body>
-    <nav class="navbar navbar-default header">
+    <nav class="navbar custom navbar-default header">
       <div class="container-fluid">
         <div class="navbar-header">
           <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
@@ -26,14 +26,17 @@
           <span class="icon-bar"></span>
           <span class="icon-bar"></span>
           <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
           </button>
-          <a class="navbar-brand" href="index.html"><span class ="glyphicon glyphicon-home"></span> Heim</a>
-          <a class="navbar-brand" href="days.html"><span class ="glyphicon glyphicon-check"></span> Skrá Daga</a>
-          <a class="navbar-brand" href="arangur.html"><span class ="glyphicon glyphicon-search"></span> Árangur</a>
+          <a class="navbar-brand active" href="/"><span class ="glyphicon glyphicon-home"></span> Heim</a>
+          <a class="navbar-brand" href="/day"><span class ="glyphicon glyphicon-check"></span> Skrá Daga</a>
+          <a class="navbar-brand" href="/longterm"><span class ="glyphicon glyphicon-search"></span> Árangur</a>
           <a class="navbar-brand" href="12spor.html"><span class ="glyphicon glyphicon-book"></span> 12 spor</a>
           <a class="navbar-brand" href="about.html"><span class ="glyphicon glyphicon-user"></span> Um Mig</a>
-          <a class="navbar-brand left" href="login.html"><span class ="glyphicon glyphicon-user"></span> Innskrá/Útskrá </span></a>
-          
+          <a class="navbar-brand left" href="/login"><span class ="glyphicon glyphicon-user"></span> Innskrá/Útskrá </span></a>
+          <a class="navbar-brand left" href="/signUp"><span class ="glyphicon glyphicon-user"></span> Nýskráning </span></a>
         </div>
       </div>
     </nav>
