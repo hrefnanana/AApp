@@ -3,7 +3,7 @@
 <%@ taglib prefix="spring" uri="http://www.springframework.org/tags"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@ taglib prefix="sf" uri="http://www.springframework.org/tags/form" %>
-<%@page contentType="text/html; charset=UTF-8" %>
+
 
 <html lang="is">
 <head>
@@ -89,7 +89,7 @@
             <!-- Soberday-->
             <label class="control-label" for="sobermonth">Fyrsti edrúdagur</label>
             <div class="controls">
-              <sf:input path="sobermont" type="sobermonth" placeholder="DDMMYY" class="input-xlarge"/>
+              <sf:input path="sobermonth" type="sobermonth" placeholder="DDMMYY" class="input-xlarge"/>
             </div>
           </div>
 
