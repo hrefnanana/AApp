@@ -3,6 +3,7 @@
 <%@ taglib prefix="spring" uri="http://www.springframework.org/tags"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@ taglib prefix="sf" uri="http://www.springframework.org/tags/form" %>
+<%@page contentType="text/html; charset=UTF-8" %>
 
 <html lang="is">
 <head>
@@ -16,6 +17,7 @@
     <link rel="stylesheet" href="/css/login.css">
   </head>
     <body>
+
     <nav class="navbar custom navbar-default header">
       <div class="container-fluid">
         <div class="navbar-header">
@@ -77,11 +79,28 @@
           
           <div class="control-group">
             <!-- Soberday-->
-            <label class="control-label" for="soberDay">Fyrsti edrúdagur</label>
+            <label class="control-label" for="soberday">Fyrsti edrúdagur</label>
             <div class="controls">
-              <sf:input path="soberDate" type="soberDay" placeholder="DDMMYY" class="input-xlarge"/>
+              <sf:input path="soberday" type="soberday" placeholder="DDMMYY" class="input-xlarge"/>
             </div>
           </div>
+
+          <div class="control-group">
+            <!-- Soberday-->
+            <label class="control-label" for="sobermonth">Fyrsti edrúdagur</label>
+            <div class="controls">
+              <sf:input path="sobermont" type="sobermonth" placeholder="DDMMYY" class="input-xlarge"/>
+            </div>
+          </div>
+
+          <div class="control-group">
+            <!-- Soberday-->
+            <label class="control-label" for="soberyear">Fyrsti edrúdagur</label>
+            <div class="controls">
+              <sf:input path="soberyear" type="soberyear" placeholder="DDMMYY" class="input-xlarge"/>
+            </div>
+          </div>
+
           <div class="control-group">
             <!-- Button -->
             <div class="controls">
@@ -93,5 +112,6 @@
     </div>
   </div>
 </div> 
+
 </body>
 </html>

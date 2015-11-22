@@ -14,8 +14,10 @@ public class User {
     private String lastName;
     private String date;
     private String userName;
-    private String soberDate;
     private String password;
+    private String soberday;
+    private String sobermonth;
+    private String soberyear;
   
    
     // Notice the empty constructor, because we need to be able to create an empty PostitNote to add
@@ -23,13 +25,15 @@ public class User {
     public User() {
     }
  
-    public User(String firstName, String lastName, String date, String userName, String soberDate, String password)  {
+    public User(String firstName, String lastName, String date, String userName, String password, String soberday, String sobermonth, String soberyear)  {
         this.firstName = firstName;
         this.lastName = lastName;
         this.date = date;
         this.userName = userName;
-        this.soberDate = soberDate;
         this.password = password;
+        this.soberday = soberday;
+        this.sobermonth = sobermonth;
+        this.soberyear = soberyear;
     }
     
     
@@ -73,14 +77,6 @@ public class User {
     	this.userName = user;
     }
     
-    public String getSoberDate() {
-    	return this.soberDate;
-    }
-    
-    public void setSoberDate(String soberDate) {
-    	this.soberDate = soberDate;
-    }
-    
     public String getPassword() {
     	return this.password;
     }
@@ -88,6 +84,34 @@ public class User {
     public void setPassword(String password) {
     	this.password = password;
     }
+    
+    public String getSoberday() {
+    	return this.soberday;
+    }
+    
+    public void setSoberday(String soberday) {
+    	this.soberday = soberday;
+    }
+    
+    public String getSobermonth() {
+    	return this.sobermonth;
+    }
+    
+    public void setSobermonth(String sobermonth) {
+    	this.sobermonth = sobermonth;
+    }
+    
+    public String getSoberyear() {
+    	return this.soberyear;
+    }
+    
+    public void setSoberyear(String soberyear) {
+    	this.soberyear = soberyear;
+    }
+    
+    
+    
+  
     
     
  
