@@ -31,12 +31,12 @@
           <span class="icon-bar"></span>
           </button>
           <a class="navbar-brand active" href="/"><span class ="glyphicon glyphicon-home"></span> Heim</a>
-          <a class="navbar-brand" href="/day"><span class ="glyphicon glyphicon-check"></span> Skrá Daga</a>
-          <a class="navbar-brand" href="/longterm"><span class ="glyphicon glyphicon-search"></span> Árangur</a>
-          <a class="navbar-brand" href="12spor.html"><span class ="glyphicon glyphicon-book"></span> 12 spor</a>
-          <a class="navbar-brand" href="about.html"><span class ="glyphicon glyphicon-user"></span> Um Mig</a>
-          <a class="navbar-brand left" href="/login"><span class ="glyphicon glyphicon-user"></span> Innskrá/Útskrá </span></a>
-          <a class="navbar-brand left" href="/signUp"><span class ="glyphicon glyphicon-user"></span> Nıskráning </span></a>
+          <a class="navbar-brand" href="/day"><span class ="glyphicon glyphicon-check"></span> SkrÃ¡ Daga</a>
+          <a class="navbar-brand" href="/longterm"><span class ="glyphicon glyphicon-search"></span> Ãrangur</a>
+          <a class="navbar-brand" href="/12spor"><span class ="glyphicon glyphicon-book"></span> 12 spor</a>
+          <a class="navbar-brand" href="/help"><span class ="glyphicon glyphicon-question-sign"></span> HjÃ¡lp</a>
+          <a class="navbar-brand left" href="/login"><span class ="glyphicon glyphicon-user"></span> InnskrÃ¡/ÃštskrÃ¡ </span></a>
+          <a class="navbar-brand left" href="/signUp"><span class ="glyphicon glyphicon-user"></span> NÃ½skrÃ¡ning </span></a>
         </div>
       </div>
     </nav>
@@ -47,7 +47,7 @@
       <sf:form class="form-horizontal" method="POST" commandName="user" action="/signUp">
         <fieldset>
           <div id="legend">
-            <h3>Nıskráning</h3>
+            <h3>NÃ½skrÃ¡ning</h3>
           	</div>
           	<div class="control-group">
             	<label class="control-label"  for="username">Notendanafn</label>
@@ -57,9 +57,9 @@
           	</div>
           <div class="control-group">
             <!-- Password-->
-            <label class="control-label" for="password">Lykilorğ</label>
+            <label class="control-label" for="password">LykilorÃ°</label>
             <div class="controls">
-              <sf:input path="password" type="password" placeholder="Lykilorğ" class="input-xlarge"/>
+              <sf:input path="password" type="password" placeholder="LykilorÃ°" class="input-xlarge"/>
             </div>
           </div>
           <div class="control-group">
@@ -79,7 +79,7 @@
           
           <div class="control-group">
             <!-- Soberday-->
-            <label class="control-label" for="soberday">Fyrsti edrúdagur</label>
+            <label class="control-label" for="soberday">Fyrsti edrÃºdagur</label>
             <div class="controls">
               <sf:input path="soberday" type="soberday" placeholder="DDMMYY" class="input-xlarge"/>
             </div>
@@ -87,15 +87,15 @@
 
           <div class="control-group">
             <!-- Soberday-->
-            <label class="control-label" for="sobermonth">Fyrsti edrúdagur</label>
+            <label class="control-label" for="sobermonth">Fyrsti edrÃºdagur</label>
             <div class="controls">
-              <sf:input path="sobermont" type="sobermonth" placeholder="DDMMYY" class="input-xlarge"/>
+              <sf:input path="sobermonth" type="sobermonth" placeholder="DDMMYY" class="input-xlarge"/>
             </div>
           </div>
 
           <div class="control-group">
             <!-- Soberday-->
-            <label class="control-label" for="soberyear">Fyrsti edrúdagur</label>
+            <label class="control-label" for="soberyear">Fyrsti edrÃºdagur</label>
             <div class="controls">
               <sf:input path="soberyear" type="soberyear" placeholder="DDMMYY" class="input-xlarge"/>
             </div>
@@ -104,7 +104,7 @@
           <div class="control-group">
             <!-- Button -->
             <div class="controls">
-              <input type="submit" value="Skrá Mig" class="btn button"/>
+              <input type="submit" value="SkrÃ¡ Mig" class="btn button"/>
             </div>
           </div>
         </fieldset>
