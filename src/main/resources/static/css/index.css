@@ -59,10 +59,11 @@ main {
 
 }	
 
-button {
+.button {
 	background-color:#DDDBCB;
 	width:35rem;
 	border:solid #050505;
+	margin-top:1rem;
 }
 
 

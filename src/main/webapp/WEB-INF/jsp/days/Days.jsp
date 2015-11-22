@@ -38,122 +38,179 @@
       </div>
     </nav>
   <main>
-    <h1 class="text-center"> Hakaðu við þau atriði sem þú hefur lokið við í dag</h1>
-    <h2 class="text-center">Í dag er : ${time}</h2>
     <div class="row">
       <div class="col-12">
         <div class="jumbotron">
-			<sf:form method="POST" commandName="day" action="/day">
-
-        		<table class="table-responsive text-center table-bordered">
-            		<tr>
-                		<td class="col-3"> </td>
-                	<%--the `path` attribute matches the `name` attribute of the Entity that was passed in the model--%>
-               			 <td><sf:input path="date" type="text" placeholder="DD/MM/YYYY"/></td>
-           			 </tr>
-
-            <c:choose>
+        <h4 class="text-center"> Hakaðu við þau atriði sem þú hefur lokið við í dag</h4>
+			<sf:form method="POST" commandName="day" action="/day" class="well">
+			
+			
+			<c:choose>
             <c:when test="${today.vakna7}">
-                <tr class="active">
-                    <td class="col-3"> Vakna:</td>
-                     <%--the `path` attribute matches the `name` attribute of the Entity that was passed in the model--%>
-                     <td><sf:checkbox path="vakna7"  checked="checked"/></td>
-            </tr>
-            </c:when>    
-            <c:otherwise>
-             <tr>
-                <td> Vakna:</td>
-                <%--the `path` attribute matches the `name` attribute of the Entity that was passed in the model--%>
-                <td><sf:checkbox path="vakna7"  /></td>
-            </tr>
-
-            </c:otherwise>
-            </c:choose>
-
+              <ul class="list-group checked-list-box">
+                <li class="list-group-item" data-color="info"><label> <sf:checkbox path="vakna7" checked="checked"/> Í dag fór ég á fætur á tilsettum tíma </label></li>
+              </ul>
+              </c:when>
+              <c:otherwise>
+                <ul class="list-group checked-list-box">
+                  <li class="list-group-item" data-color="info"><label> <sf:checkbox path="vakna7"/> Í dag fór ég á fætur á tilsettum tíma </label></li>
+                </ul>
+                </c:otherwise>
+                </c:choose>
+                
             <c:choose>
             <c:when test="${today.borda}">
-                <tr>
-                    <td> Borða:</td>
-                     <%--the `path` attribute matches the `name` attribute of the Entity that was passed in the model--%>
-                     <td><sf:checkbox path="borda"  checked="checked"/></td>
-            </tr>
-            </c:when>    
-            <c:otherwise>
-             <tr>
-                <td> Borða:</td>
-                <%--the `path` attribute matches the `name` attribute of the Entity that was passed in the model--%>
-                <td><sf:checkbox path="borda"  /></td>
-            </tr>
-
-            </c:otherwise>
-            </c:choose>
-
+              <ul class="list-group checked-list-box">
+                <li class="list-group-item" data-color="info"><label> <sf:checkbox path="borda" checked="checked"/> Í dag borðaði ég reglulega og hollt </label></li>
+              </ul>
+              </c:when>
+              <c:otherwise>
+                <ul class="list-group checked-list-box">
+                  <li class="list-group-item" data-color="info"><label> <sf:checkbox path="borda"/> Í dag borðaði ég reglulega og hollt </label></li>
+                </ul>
+                </c:otherwise>
+                </c:choose>
+                
+                
             <c:choose>
             <c:when test="${today.hugleida}">
-                <tr>
-                    <td> Hugleiða:</td>
-                     <%--the `path` attribute matches the `name` attribute of the Entity that was passed in the model--%>
-                     <td><sf:checkbox path="hugleida"  checked="checked"/></td>
-            </tr>
-            </c:when>    
-            <c:otherwise>
-             <tr>
-                <td> Hugleiða:</td>
-                <%--the `path` attribute matches the `name` attribute of the Entity that was passed in the model--%>
-                <td><sf:checkbox path="hugleida"  /></td>
-            </tr>
+              <ul class="list-group checked-list-box">
+                <li class="list-group-item" data-color="info"><label> <sf:checkbox path="hugleida" checked="checked"/> Í dag gaf ég mér tíma til hugleiðslu </label></li>
+              </ul>
+              </c:when>
+              <c:otherwise>
+                <ul class="list-group checked-list-box">
+                  <li class="list-group-item" data-color="info"><label> <sf:checkbox path="hugleida"/> Í dag gaf ég mér tíma til hugleiðslu </label></li>
+                </ul>
+                </c:otherwise>
+                </c:choose>
+                
+                
+           <c:choose>
+            <c:when test="${today.stundvis}">
+              <ul class="list-group checked-list-box">
+                <li class="list-group-item" data-color="info"><label> <sf:checkbox path="stundvisi" checked="checked"/> Í dag var ég stundvís </label></li>
+              </ul>
+              </c:when>
+              <c:otherwise>
+                <ul class="list-group checked-list-box">
+                  <li class="list-group-item" data-color="info"><label> <sf:checkbox path="stundvisi"/>  Í dag var ég stundvís </label></li>
+                </ul>
+                </c:otherwise>
+                </c:choose>
+                
+                
+           <c:choose>
+            <c:when test="${today.tiltekt}">
+              <ul class="list-group checked-list-box">
+                <li class="list-group-item" data-color="info"><label> <sf:checkbox path="tiltekt" checked="checked"/> Ég hélt hreinu í kringum mig í dag </label></li>
+              </ul>
+              </c:when>
+              <c:otherwise>
+                <ul class="list-group checked-list-box">
+                  <li class="list-group-item" data-color="info"><label> <sf:checkbox path="tiltekt"/>  Ég hélt hreinu í kringum mig í dag </label></li>
+                </ul>
+                </c:otherwise>
+                </c:choose>
+             
+           <c:choose>
+            <c:when test="${today.aabok}">
+              <ul class="list-group checked-list-box">
+                <li class="list-group-item" data-color="info"><label> <sf:checkbox path="aabok" checked="checked"/> Ég las í AA- bókinni í dag </label></li>
+              </ul>
+              </c:when>
+              <c:otherwise>
+                <ul class="list-group checked-list-box">
+                  <li class="list-group-item" data-color="info"><label> <sf:checkbox path="aabok"/>  Ég las í AA-bókinni í dag </label></li>
+                </ul>
+                </c:otherwise>
+                </c:choose>
+                
+                             
+           <c:choose>
+            <c:when test="${today.sofa}">
+              <ul class="list-group checked-list-box">
+                <li class="list-group-item" data-color="info"><label> <sf:checkbox path="sofa" checked="checked"/> Ég fór að sofa á skikkanlegum tíma </label></li>
+              </ul>
+              </c:when>
+              <c:otherwise>
+                <ul class="list-group checked-list-box">
+                  <li class="list-group-item" data-color="info"><label> <sf:checkbox path="sofa"/>  Ég fór að sofa á skikkanlegum tíma </label></li>
+                </ul>
+                </c:otherwise>
+                </c:choose>
+                
+                
+           <c:choose>
+            <c:when test="${today.dagbok}">
+              <ul class="list-group checked-list-box">
+                <li class="list-group-item" data-color="info"><label> <sf:checkbox path="dagbok" checked="checked"/> Ég skrifaði í dagbókina mína í dag </label></li>
+              </ul>
+              </c:when>
+              <c:otherwise>
+                <ul class="list-group checked-list-box">
+                  <li class="list-group-item" data-color="info"><label> <sf:checkbox path="dagbok"/>  Ég skrifaði í dagbókina mína í dag </label></li>
+                </ul>
+                </c:otherwise>
+                </c:choose>
+                
 
-            </c:otherwise>
-            </c:choose>
-           
-        </table>
+           <c:choose>
+            <c:when test="${today.bad}">
+              <ul class="list-group checked-list-box">
+                <li class="list-group-item" data-color="info"><label> <sf:checkbox path="bad" checked="checked"/> Ég fór í bað í dag </label></li>
+              </ul>
+              </c:when>
+              <c:otherwise>
+                <ul class="list-group checked-list-box">
+                  <li class="list-group-item" data-color="info"><label> <sf:checkbox path="bad"/>  Ég fór í bað í dag </label></li>
+                </ul>
+                </c:otherwise>
+                </c:choose>
+                
 
-        <input type="submit" VALUE="Check it!"/>
+           <c:choose>
+            <c:when test="${today.fundur}">
+              <ul class="list-group checked-list-box">
+                <li class="list-group-item" data-color="info"><label> <sf:checkbox path="fundur" checked="checked"/> Ég fór á AA fund í dag </label></li>
+              </ul>
+              </c:when>
+              <c:otherwise>
+                <ul class="list-group checked-list-box">
+                  <li class="list-group-item" data-color="info"><label> <sf:checkbox path="fundur"/>  Ég fór á AA fund í dag </label></li>
+                </ul>
+                </c:otherwise>
+                </c:choose>
+                
+           <c:choose>
+            <c:when test="${today.kurteis}">
+              <ul class="list-group checked-list-box">
+                <li class="list-group-item" data-color="info"><label> <sf:checkbox path="kurteis" checked="checked"/> Ég sýndi tillitssemi og ábyrgð í dag </label></li>
+              </ul>
+              </c:when>
+              <c:otherwise>
+                <ul class="list-group checked-list-box">
+                  <li class="list-group-item" data-color="info"><label> <sf:checkbox path="kurteis"/>  Ég sýndi tillitssemi og ábyrgð í dag </label></li>
+                </ul>
+                </c:otherwise>
+                </c:choose>
+                
+                
+           <c:choose>
+            <c:when test="${today.hreyfing}">
+              <ul class="list-group checked-list-box">
+                <li class="list-group-item" data-color="info"><label> <sf:checkbox path="hreyfing" checked="checked"/> Ég stundaði hreyfingu/útivist í dag </label></li>
+              </ul>
+              </c:when>
+              <c:otherwise>
+                <ul class="list-group checked-list-box">
+                  <li class="list-group-item" data-color="info"><label> <sf:checkbox path="hreyfing"/> Ég stundaði hreyfingu/útivist í dag </label></li>
+                </ul>
+                </c:otherwise>
+                </c:choose>
 
-    </sf:form>
-        </div>
-      </div>
-    </div>
-    </main>
-
-  </body>
-    <p>I dag er : ${time}</p>
-
-    <h1><a href="/day">Postit Notes</a></h1>
-    <h2>${today.borda}</h2>
-
-     <%--Choose what code to generate based on tests that we implement--%>
-    <c:choose>
-        <%--If the model has an attribute with the name `postitNotes`--%>
-        <c:when test="${not empty day}">
-            <%--Create a table for the Postit Notes--%>
-            <table class="notes">
-
-                <%--For each postit note, that is in the list that was passed in the model--%>
-                <%--generate a row in the table--%>
-                <%--Here we set `postit` as a singular item out of the list `postitNotes`--%>
-                <c:forEach var="day" items="${days}">
-                    <tr>
-                        <%--We can reference attributes of the Entity by just entering the name we gave--%>
-                        <%--it in the singular item var, and then just a dot followed by the attribute name--%>
-
-                        <%--Create a link based on the name attribute value--%>
-                        <td><a href="/day/${day.date}">${day.date}</a></td>
-                        <%--The String in the note attribute--%>
-                        <td>${day.id}</td>
-                        <td>${day.borda}</td>
-                        <td>${day.vakna7}</td>
-                    </tr>
-                </c:forEach>
-            </table>
-        </c:when>
-
-        <%--If all tests are false, then do this--%>
-        <c:otherwise>
-            <h3>No notes!</h3>
-        </c:otherwise>
-    </c:choose>
-
-
+                
+                <input type="submit" VALUE="Vista" class="button btn btn-default btn-lg btn-block"/>               
+              </sf:form>
     </body>
 </html>

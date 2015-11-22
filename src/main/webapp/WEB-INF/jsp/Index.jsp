@@ -27,27 +27,26 @@
           <span class="icon-bar"></span>
           <span class="icon-bar"></span>
           </button>
-          <a class="navbar-brand active" href="index.html"><span class ="glyphicon glyphicon-home"></span> Heim</a>
-          <a class="navbar-brand" href="days.html"><span class ="glyphicon glyphicon-check"></span> Skrá Daga</a>
-          <a class="navbar-brand" href="arangur.html"><span class ="glyphicon glyphicon-search"></span> Árangur</a>
+          <a class="navbar-brand active" href="/"><span class ="glyphicon glyphicon-home"></span> Heim</a>
+          <a class="navbar-brand" href="/day"><span class ="glyphicon glyphicon-check"></span> Skrá Daga</a>
+          <a class="navbar-brand" href="/progress"><span class ="glyphicon glyphicon-search"></span> Árangur</a>
           <a class="navbar-brand" href="12spor.html"><span class ="glyphicon glyphicon-book"></span> 12 spor</a>
           <a class="navbar-brand" href="about.html"><span class ="glyphicon glyphicon-user"></span> Um Mig</a>
-          <a class="navbar-brand left" href="login.html"><span class ="glyphicon glyphicon-user"></span> Innskrá/Útskrá </span></a>
-          
+          <a class="navbar-brand left" href="/login"><span class ="glyphicon glyphicon-user"></span> Innskrá/Útskrá </span></a>
+          <a class="navbar-brand left" href="/signUp"><span class ="glyphicon glyphicon-user"></span> Nýskráning </span></a>
         </div>
       </div>
     </nav>
     <div class="container-fluid jumbotron text-center">
       <h1>Velkominn Jón </h1>
-      <h2> Teljari: ${soberCounter} </h2>
       <div class="well">
         <p>Þú hefur verið edrú í  <span >${days}</span> daga, <span >${months} </span> mánuði og <span >${years}</span> ár!</p>
       </div>
-      <button href="#" type="button" class="btn btn-lg btn-lg">
+      <button href="#" type="button" class="button btn btn-lg btn-lg">
       <span class="glyphicon glyphicon-check">
       </span> Skrá Daga
       </button>
-      <button href="#" type="button" class="btn btn-lg btn-lg">
+      <button href="#" type="button" class="button btn btn-lg btn-lg">
       <span class="glyphicon glyphicon-search">
       </span> Skoða árangur
       </button>
