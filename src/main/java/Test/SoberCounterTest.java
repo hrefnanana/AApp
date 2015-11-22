@@ -18,6 +18,7 @@ public class SoberCounterTest {
 	
 		LocalDate soberDate = LocalDate.of(2014, 6, 29);
 		Period soberCounter = soberDate.until(dateToday);
+		System.out.println("sobercounter " + soberCounter);
 		int years = soberCounter.getYears();
 		int months = soberCounter.getMonths();
 		int days = soberCounter.getDays();

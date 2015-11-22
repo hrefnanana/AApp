@@ -49,5 +49,5 @@ public interface UserService {
     
     String doesExist(String username);
     
-    String checkIfMatch(String username, String password);
+    User findByUserNameAndPassword(String username, String password);
 }

@@ -6,11 +6,16 @@ import java.time.Period;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.SessionAttributes;
+
+import project.persistence.entities.User;
 import project.service.StringManipulationService;
 
 @Controller
+@SessionAttributes({"user"})
 public class HomeController {
 
     // Instance Variables
@@ -44,6 +49,29 @@ public class HomeController {
         // (the Index.jsp file) that is in the path /main/webapp/WEB-INF/jsp/
         // If you change "Index" to something else, be sure you have a .jsp
         // file that has the same name
+        return "Index";
+    }
+    @RequestMapping(value = "/home", method = RequestMethod.GET)
+    public String loggedIn(@ModelAttribute("user") User user, Model model){	
+    	
+    	 int soberday = Integer.parseInt(user.getSoberday());
+ 		 int sobermonth = Integer.parseInt(user.getSobermonth());
+ 		 int soberyear = Integer.parseInt(user.getSoberyear());
+ 		 
+    	 LocalDate soberDate = LocalDate.of(soberyear, sobermonth, soberday);
+    	 LocalDate dateToday = LocalDate.now();
+    	 Period soberCounter = soberDate.until(dateToday);
+    	 int years = soberCounter.getYears();
+ 		 int months = soberCounter.getMonths();
+ 		 int days = soberCounter.getDays();
+ 	
+ 		 String name = user.getFirstName();
+	 
+    	 model.addAttribute("years",years);
+    	 model.addAttribute("days",days);
+    	 model.addAttribute("months",months);
+    	 model.addAttribute("name", name);
+
         return "Index";
     }
 
