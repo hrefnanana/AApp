@@ -37,26 +37,35 @@
         </div>
       </div>
     </nav>
-    <div class="container-fluid jumbotron text-center">
-
-      <h1>Velkominn ${name} </h1>
-
-      <div class="well">
-        <p>Þú hefur verið edrú í  <span >${days}</span> daga, <span >${months} </span> mánuði og <span >${years}</span> ár!</p>
-      </div>
-      <button onclick="location.href='/day'"  type="button" class="button btn btn-lg btn-lg">
-      <span class="glyphicon glyphicon-check">
-      </span> Skrá Daga
-      </button>
-      <button onclick="location.href='/longterm'"  type="button" class="button btn btn-lg btn-lg">
-      <span class="glyphicon glyphicon-search">
-      </span> Skoða árangur
-      </button>
-    </div>
-    <ul>
-      <li><a href="/postit">Click here for Persistence Layer Demo</a></li>
-      <li><a href="/day">PRUFPRUFPRUFURPFURPFUR</a></li>
-    </ul>
+    <main>
+    	<section class="jumbotron">
+    		<h1 class="text-center">Leiðbeiningar</h1>
+    		<div class="well">
+    			<h2>Til að skrá nýjan notanda</h2>
+    			<p>1.Ýttu á Nýskrá í valmyndinni efst á síðunni </p>
+				<p>2.Veldu þér notandanafn og lykilorð, skráðu nafn þitt og þinn fyrsta edrúdag</p>
+				<p>3.Nú hefur þú búið til nýjan notanda og getur skráð þig inn í kerfið með því að velja Innskrá í valmyndinni.</p>   
+				<h2>Til að skrá sig inn</h2>
+    			<p>1.Ýttu á Innskrá í valmyndinni efst á síðunni </p>
+				<p>2.Skráðu notandanafn og lykilorð og ýttu á hnappinn Innsrká</p>
+				<p>3.Nú ert nú innskráður í kerfið.</p>  	
+				<h2>Til að skrá sig út</h2>
+    			<p>1.Ekki er þörf á að skrá sig sérstaklega út. </p>
+				<p>2.ÞVÍ ÞAÐ ER EKKI HÆGT!</p>	
+				<p>BIG BROTHER IS WATCHING YOU <span class="glyphicon glyphicon-eye-open"></span></p>
+				<h2>Til að skrá daga</h2>
+    			<p>1.Ýttu á Skrá Daga í valmyndinni efst á síðunni</p>
+				<p>2.Þar getur þú hakað við öll þau atriðið sem þú hefur lokið við þann daginn</p>
+				<p>3.Næst ýtir þú á Vista hnappinn neðst á síðunni.</p>
+				<p>4.Þú getur síðan komið inn á síðuna hvenær sem er þann daginn og breytt/bætt við atriðum sem þú hefur lokið við.</p>
+				<h2>Til að skoða árangur</h2>
+    			<p>1.Ýttu á Árangur í valmyndinni efst á síðunni</p>
+				<p>2.Veldu fjölda daga sem þú vilt skoða og sláðu töluna inn í textareitinn.</p>
+				<p>3.Ýttu á Skoða hnappinn.</p>
+				<p>4.Þá ætti að birtast línurit sem sýnir þér bæði fjölda atriða sem lokið var við á hverjum degi sem og fjölda atriða sem lokið var við á tímabilinu.</p>	
+    		</div>	
+    	</section>
+    </main>
   </body>
     <footer>Class HBV501G, University of Iceland, Fall 2015</footer>
 </html>

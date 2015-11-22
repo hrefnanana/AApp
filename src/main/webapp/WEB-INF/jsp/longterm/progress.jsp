@@ -9,6 +9,10 @@
     <head>
         <meta charset = "UTF-8">
         <title>Postit Notes</title>
+        <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
+   		<link rel="stylesheet" href="https://netdna.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js">
+    	<link rel="stylesheet" href="/css/index.css">
+
 
         <link rel="stylesheet" type="text/css" href="<c:url value="/css/postitnote.css"/>"/>
          <script type="text/javascript" src="https://www.google.com/jsapi"></script>
@@ -24,8 +28,11 @@
               ]);
 
             var options = {
-              title: 'Titill',
-              vAxis: {title: 'lýsandi titill'},
+              title: 'Árangur',
+              vAxis: {title: 'Fjöldi Atriða'},
+              backgroundColor: '#DDDBCB',
+              legend: { position: 'bottom' },
+              colors: ['#FF0099'],
             };
 
             var chart = new google.visualization.SteppedAreaChart(document.getElementById('chart_div'));
@@ -60,10 +67,11 @@
 
     
 
-    <h1>Longterm stoff</h1>
-
-    <div id="chart_div" style="width: 900px; height: 500px;"></div>
-
+   
+	<section class="jumbotron">
+	 <h1 class="text-center">Árangur</h1>
+    		<div id="chart_div" style="width: 900px; height: 500px; display:block; margin:0 auto;" class="jojo"></div>
+	</section>
     <div>Það eru ${today.getFinished()} hlutir búnir</div>
 
     <c:choose>
