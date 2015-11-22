@@ -29,6 +29,8 @@ public class Day {
     private Boolean kurteis; 
     private Boolean hreyfing;
     
+
+    
     // Notice the empty constructor, because we need to be able to create an empty PostitNote to add
     // to our model so we can use it with our form
     public Day() {
@@ -50,6 +52,9 @@ public class Day {
         this.hreyfing=hreyfing;
 
     }
+    
+    
+
  
     public Long getId() {
         return id;

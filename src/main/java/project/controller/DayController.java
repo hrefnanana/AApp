@@ -9,11 +9,15 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.SessionAttributes;
+
 import project.persistence.entities.Day;
+import project.persistence.entities.User;
 import project.persistence.repositories.DayRepository;
 import project.service.DayService;
 
 @Controller
+@SessionAttributes({"user"})
 public class DayController {
 
     // Instance Variables
@@ -49,9 +53,9 @@ public class DayController {
 
         // Here we get all the Postit Notes (in a reverse order) and add them to the model
         //model.addAttribute("days",dayService.findAllByOrderByIdDesc());
-        model.addAttribute("today",dayService.findByDate(time));
-        Day today = dayService.findByDate(time);
-        System.out.println(today.getVakna7());
+        //model.addAttribute("today",dayService.findByDate(time));
+        //Day today = dayService.findByDate(time);
+        //System.out.println(today.getVakna7());
         model.addAttribute("time", time);
         System.out.println("whatwhat");
         
@@ -67,7 +71,7 @@ public class DayController {
     // into the form.
     // Notice the `method = RequestMethod.POST` part
     @RequestMapping(value = "/day", method = RequestMethod.POST)
-    public String dayViewPost(@ModelAttribute("day") Day day,
+    public String dayViewPost(@ModelAttribute("day") Day day, User user,
                                      Model model){
     	
     	LocalDate ldt = LocalDate.now();
@@ -75,6 +79,7 @@ public class DayController {
     	time = time.replace("-", "");
     	
     	day.setDate(time);
+
     	dayService.deleteByDate(time);
     	System.out.println("whatwhat2");
 
