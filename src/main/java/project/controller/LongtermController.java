@@ -3,6 +3,8 @@ package project.controller;
 import java.time.LocalDate;
 import java.util.ArrayList;
 
+
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -15,6 +17,11 @@ import org.springframework.web.bind.annotation.SessionAttributes;
 import project.persistence.entities.*;
 import project.persistence.repositories.DayRepository;
 import project.service.DayService;
+
+import org.springframework.validation.BindingResult;
+import javax.validation.Valid;
+
+
 
 @Controller
 @SessionAttributes({"longterm", "user"})
@@ -61,11 +68,15 @@ public class LongtermController {
 
     @RequestMapping(value = "/longterm", method = RequestMethod.POST)
     
-    public String dayViewPost(@ModelAttribute("longterm") Longterm longterm, User user, Model model){
+    public String dayViewPost(@ModelAttribute("longterm") @Valid Longterm longterm, BindingResult result, User user, Model model){
     	
 
         // Save the Postit Note that we received from the form
-
+    	if (result.hasErrors()) {
+    	      model.addAttribute("villa", "villa");
+    	      return "longterm/longterm";
+    	    }
+    	else{
         int numberOfDays = longterm.getNumberOfDays();
         System.out.println(numberOfDays);
         LocalDate ldt = LocalDate.now();
@@ -94,7 +105,7 @@ public class LongtermController {
         // reference this attribute there by the name `postitNote`.
 
         // Return the view
-        return "redirect:/longterm/progress";
+        return "redirect:/longterm/progress";}
     }
     
     @RequestMapping(value = "/longterm/progress", method = RequestMethod.GET)

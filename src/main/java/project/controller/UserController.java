@@ -3,6 +3,7 @@ package project.controller;
 
 
 import org.springframework.beans.factory.annotation.Autowired;
+
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.ModelAttribute;
@@ -12,6 +13,8 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import project.persistence.entities.*;
 import project.persistence.repositories.*;
 import project.service.*;
+import org.springframework.validation.BindingResult;
+import javax.validation.Valid;
 
 @Controller
 public class UserController {
@@ -45,9 +48,15 @@ public class UserController {
     
     
     @RequestMapping(value = "/signUp", method = RequestMethod.POST)
-    public String userViewPost(@ModelAttribute("user") User user,
+    public String userViewPost(@ModelAttribute("user") @Valid User user,BindingResult result, 
                                      Model model){
    
+    	if (result.hasErrors()) {
+  	      model.addAttribute("villa", "villa");
+  	      System.out.println("villa í signup");
+  	      return "logins/signUp";
+  	    }
+    	else{
     	//model.addAttribute("user", new User());
     	String firstName = user.getFirstName();
     	String lastName = user.getLastName();
@@ -64,15 +73,17 @@ public class UserController {
     	if(res == null) {
     		System.out.println("username var ekki til");
     	 	userService.save(user);
+    	 	model.addAttribute("success","Nýskráning tókst");
     	}
     	else {
     		System.out.println("username var til :(");
-    		model.addAttribute("ekkitil", "Þetta username er fra´tekið");
+    		model.addAttribute("ekkitil", "Þetta username er frátekið");
     	}
     		
     	System.out.println(res);
 
         return "logins/signUp";
+    	}
     }
     
     

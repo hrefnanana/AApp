@@ -14,6 +14,9 @@ import org.springframework.web.bind.annotation.SessionAttributes;
 import project.persistence.entities.User;
 import project.service.*;
 
+import org.springframework.validation.BindingResult;
+import javax.validation.Valid;
+
 @Controller
 @SessionAttributes({"user"})
 public class HomeController {
@@ -44,6 +47,7 @@ public class HomeController {
     
     @RequestMapping(value = "/", method = RequestMethod.POST)
     public String homePost(@ModelAttribute("user") User user, Model model){	
+    	
     	
     	String userName = user.getUserName();
     	String password = user.getPassword();

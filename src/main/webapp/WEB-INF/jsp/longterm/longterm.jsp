@@ -16,6 +16,8 @@
     <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js">
     <link rel="stylesheet" href="/css/index.css">
     <link rel="stylesheet" href="/css/login.css">
+    
+    
   </head>
     <body>
         <nav class="navbar custom navbar-default header">
@@ -30,7 +32,7 @@
           <span class="icon-bar"></span>
           <span class="icon-bar"></span>
           </button>
-          <a class="navbar-brand active" href="/"><span class ="glyphicon glyphicon-home"></span> Heim</a>
+          <a class="navbar-brand active" href="/home"><span class ="glyphicon glyphicon-home"></span> Heim</a>
           <a class="navbar-brand" href="/day"><span class ="glyphicon glyphicon-check"></span> Skrá Daga</a>
           <a class="navbar-brand" href="/longterm"><span class ="glyphicon glyphicon-search"></span> Árangur</a>
           <a class="navbar-brand" href="/12spor"><span class ="glyphicon glyphicon-book"></span> 12 spor</a>
@@ -42,17 +44,18 @@
 <div class="container">
     <div class="row jumbotron">
     <div class="span12">
-      <sf:form class="form-horizontal" method="POST" commandName="longterm" action="/longterm">
+      <sf:form name="myForm" class="form-horizontal" method="POST" commandName="longterm" action="/longterm">
         <fieldset>
           <div id="legend">
             <h3>Árangur</h3>
             <h4>Það eru ${today.getFinished()} atriði búnir í dag! Vel gert ${user.firstName}</h4>
+            <h1>${villa}</h1>
           	</div>
           	<div class="control-group">
             	<label class="control-label"  for="longterm">Hversu marga daga viltu skoða?</label>
             	<div class="controls">
                 <!-- numberOfDays-->
-              		<sf:input type="text" path="numberOfDays" placeholder="0" class="input-xlarge"/>
+              		<sf:input name="fname" type="text" path="numberOfDays" placeholder="0" class="input-xlarge"/>
            		 </div>
            		 
           	</div>
