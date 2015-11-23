@@ -26,8 +26,8 @@ public interface DayRepository extends JpaRepository<Day, Long> {
     
     @Modifying
     @Transactional
-    @Query(value = "DELETE FROM Day d where d.date = ?1 ")
-    void deleteByDate(String date);
+    @Query(value = "DELETE FROM Day d where d.date = ?1 AND d.userId = ?2")
+    void deleteByDateAndUserId(String date, Long userId);
 
     // If we need a custom query that maybe doesn't fit the naming convention used by the JPA repository,
     // then we can write it quite easily with the @Query notation, like you see below.
@@ -43,5 +43,5 @@ public interface DayRepository extends JpaRepository<Day, Long> {
 
     Day findOne(Long id);
 
-    Day findByDate(String date);
+    Day findByDateAndUserId(String date, long userId);
 }

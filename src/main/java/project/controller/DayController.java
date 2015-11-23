@@ -33,7 +33,7 @@ public class DayController {
     // This handles the GET request for this URL
     // Notice the `method = RequestMethod.GET` part
     @RequestMapping(value = "/day", method = RequestMethod.GET)
-    public String dayViewGet(Model model){
+    public String dayViewGet(User user, Model model){
     	
     	
     	System.out.println("whatwhat1");
@@ -52,12 +52,10 @@ public class DayController {
         
 
         // Here we get all the Postit Notes (in a reverse order) and add them to the model
-        //model.addAttribute("days",dayService.findAllByOrderByIdDesc());
-        //model.addAttribute("today",dayService.findByDate(time));
-        //Day today = dayService.findByDate(time);
-        //System.out.println(today.getVakna7());
+        model.addAttribute("days",dayService.findAllByOrderByIdDesc());
+        model.addAttribute("today",dayService.findByDateAndUserId(time, user.getId()));
+        
         model.addAttribute("time", time);
-        System.out.println("whatwhat");
         
 
         // Return the view
@@ -79,8 +77,9 @@ public class DayController {
     	time = time.replace("-", "");
     	
     	day.setDate(time);
+    	day.setUserId(user.getId());
 
-    	dayService.deleteByDate(time);
+    	dayService.deleteByDateAndUserId(time, user.getId());
     	System.out.println("whatwhat2");
 
         // Save the Postit Note that we received from the form
@@ -93,7 +92,7 @@ public class DayController {
         // If you look at the form in PostitNotes.jsp, you can see that we
         // reference this attribute there by the name `postitNote`.
         model.addAttribute("day", new Day());
-        model.addAttribute("today",dayService.findByDate(time));
+        model.addAttribute("today",dayService.findByDateAndUserId(time, user.getId()));
 
         // Return the view
         return "days/Days";
@@ -105,7 +104,7 @@ public class DayController {
     // based on the data that we have.
     // This method finds all Postit Notes posted by someone with the requested {name}
     // and returns a list with all those Postit Notes.
-    @RequestMapping(value = "/day/{date}", method = RequestMethod.GET, produces = "text/plain;charset=UTF-8")
+   /* @RequestMapping(value = "/day/{date}", method = RequestMethod.GET, produces = "text/plain;charset=UTF-8")
     public String daysGetNotesFromDate(@PathVariable String date,
                                              Model model){
     	System.out.println("whatwhat3");
@@ -120,5 +119,5 @@ public class DayController {
 
         // Return the view
         return "days/Days";
-    }
+    }*/
 }
