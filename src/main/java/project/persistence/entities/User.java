@@ -1,6 +1,7 @@
 package project.persistence.entities;
 
 import javax.persistence.*;
+import javax.validation.constraints.*;
 import java.util.*;
 
 @Entity
@@ -11,13 +12,23 @@ public class User {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
+    @NotNull
     private String firstName;
+    @NotNull
     private String lastName;
     private String date;
+    @NotNull
     private String userName;
+    @NotNull
     private String password;
+    @NotNull
+    @Pattern(regexp="[0-3][0-9]|[0-9]")
     private String soberday;
+    @NotNull
+    @Pattern(regexp="1[0-2]|[1-9]")
     private String sobermonth;
+    @NotNull
+    @Pattern(regexp="20[0-1][0-9]|19[0-9][0-9]")
     private String soberyear;
 
   

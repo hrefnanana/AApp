@@ -2,6 +2,7 @@ package project.persistence.entities;
  
 import javax.persistence.*;
 import java.util.*;
+import javax.validation.constraints.*;
  
 /**
  * The class for the Postit Note itself.
@@ -15,7 +16,11 @@ public class Longterm {
     // Declare that this attribute is the id
    // @Id
     //@GeneratedValue(strategy = GenerationType.IDENTITY)
+	@NotNull
+    @Min(1)
     private int numberOfDays;
+	
+	
     private ArrayList<Day> days = new ArrayList<Day>();
    
     // Notice the empty constructor, because we need to be able to create an empty PostitNote to add
