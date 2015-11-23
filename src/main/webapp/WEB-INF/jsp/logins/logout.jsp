@@ -2,20 +2,22 @@
 
 <%@ taglib prefix="spring" uri="http://www.springframework.org/tags"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<%@ taglib prefix="sf" uri="http://www.springframework.org/tags/form" %>
 <%@page contentType="text/html; charset=UTF-8" %>
 
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>AApp</title>
-    
-    <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
-    <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js">
-    <link rel="stylesheet" href="/css/index.css">
-  </head>
-  <body data-spy="scroll" data-target=".navbar-fixed-top">
-    <nav class="navbar custom navbar-default header">
+<html lang="is">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>AApp</title>
+        
+        <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
+        <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js">
+        <link rel="stylesheet" href="/css/index.css">
+        <link rel="stylesheet" href="/css/login.css">
+      </head>
+        <body>
+       <nav class="navbar custom navbar-default header">
       <div class="container-fluid">
         <div class="navbar-header">
           <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
@@ -36,26 +38,20 @@
         </div>
       </div>
     </nav>
-    <div class="container-fluid jumbotron text-center">
-
-      <h1>Velkominn ${name} </h1>
-
-      <div class="well">
-        <p>Þú hefur verið edrú í  <span >${days}</span> daga, <span >${months} </span> mánuði og <span >${years}</span> ár!</p>
-      </div>
-      <button onclick="location.href='/day'"  type="button" class="button btn btn-lg btn-lg">
-      <span class="glyphicon glyphicon-check">
-      </span> Skrá Daga
-      </button>
-      <button onclick="location.href='/longterm'"  type="button" class="button btn btn-lg btn-lg">
-      <span class="glyphicon glyphicon-search">
-      </span> Skoða árangur
-      </button>
-    </div>
-    <ul>
-      <li><a href="/postit">Click here for Persistence Layer Demo</a></li>
-      <li><a href="/day">PRUFPRUFPRUFURPFURPFUR</a></li>
-    </ul>
-  </body>
-    <footer>Class HBV501G, University of Iceland, Fall 2015</footer>
+        <div class="container">
+            <p>${notLoggedIn}</p>
+            <div class="row jumbotron">
+            <div class="span12">
+              <sf:form class="form-horizontal" method="POST" action="/signOut">
+               
+                    <!-- Button -->
+                    <div class="controls">
+                      <input type="submit" value="Logout" class="btn button"/>
+                    </div>
+                
+              </sf:form>
+            </div>
+          </div>
+        </div>
+    </body>
 </html>
