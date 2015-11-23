@@ -42,8 +42,8 @@ public class DayServiceImplementation implements DayService {
     }
     
     @Override
-    public void deleteByDate(String date) {
-        repository.deleteByDate(date);
+    public void deleteByDateAndUserId(String date, Long userId) {
+        repository.deleteByDateAndUserId(date, userId);
     }
 
     @Override
@@ -52,8 +52,8 @@ public class DayServiceImplementation implements DayService {
     }
 
     @Override
-    public Day findByDate(String date) {
-        return repository.findByDate(date);
+    public Day findByDateAndUserId(String date, Long userId) {
+        return repository.findByDateAndUserId(date, userId);
     }
 
 

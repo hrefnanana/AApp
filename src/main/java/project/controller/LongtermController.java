@@ -17,7 +17,7 @@ import project.persistence.repositories.DayRepository;
 import project.service.DayService;
 
 @Controller
-@SessionAttributes("longterm")
+@SessionAttributes({"longterm", "user"})
 public class LongtermController {
 
     // Instance Variables
@@ -33,7 +33,7 @@ public class LongtermController {
     // This handles the GET request for this URL
     // Notice the `method = RequestMethod.GET` part
     @RequestMapping(value = "/longterm", method = RequestMethod.GET)
-    public String dayViewGet(Model model){
+    public String dayViewGet(User user, Model model){
     	
     	
     	// the date today in the format YYYYMMDD
@@ -49,9 +49,10 @@ public class LongtermController {
 
         // Here we get all the Postit Notes (in a reverse order) and add them to the model
         //model.addAttribute("days",dayService.findAllByOrderByIdDesc());
-        model.addAttribute("today",dayService.findByDate(time));
+        //model.addAttribute("today",dayService.findByDate(time));
         model.addAttribute("time", time);
         model.addAttribute("longterm",new Longterm());
+        model.addAttribute("user",user);
         
 
         // Return the view
@@ -60,9 +61,7 @@ public class LongtermController {
 
     @RequestMapping(value = "/longterm", method = RequestMethod.POST)
     
-    public String dayViewPost(@ModelAttribute("longterm") Longterm longterm,
-    		
-                                     Model model){
+    public String dayViewPost(@ModelAttribute("longterm") Longterm longterm, User user, Model model){
     	
 
         // Save the Postit Note that we received from the form
@@ -77,7 +76,7 @@ public class LongtermController {
         model.addAttribute("longterm",new Longterm());
         for(int i = 0; i<numberOfDays; i++){
         	
-        	Days.add(dayService.findByDate(time));
+        	Days.add(dayService.findByDateAndUserId(time, user.getId()));
         	System.out.println(time+" "+i+" "+ldt);
         	ldt  = ldt.minusDays(Long.valueOf(1));
         	time = ldt.toString();
@@ -115,7 +114,7 @@ public class LongtermController {
     	Day tempday;
         for(int i = 0; i<numberOfDays; i++){
         	System.out.println(time+" "+i+" "+ldt);
-        	ldt  = ldt.minusDays(Long.valueOf(1));
+        	
         	int day = ldt.getDayOfMonth();
         	int month = ldt.getMonthValue();
         	int year = ldt.getYear();
@@ -126,6 +125,7 @@ public class LongtermController {
         	}
         	Data = Data + "['"+date+"',"+total+"]," ;
         	System.out.println(Data);
+        	ldt  = ldt.minusDays(Long.valueOf(1));
         	
         }
         model.addAttribute("data",Data);

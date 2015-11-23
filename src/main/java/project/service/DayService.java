@@ -43,9 +43,9 @@ public interface DayService {
      * @param date {@link String}
      * @return All {@link Day}s with the {@link String date} passed
      */
-    Day findByDate(String date);
+    Day findByDateAndUserId(String date, Long userId);
     
-    void deleteByDate(String date);
+    void deleteByDateAndUserId(String date, Long userId);
 
 
     

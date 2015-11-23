@@ -15,6 +15,7 @@ public class Day {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
+    private Long userId;
     private String date;
     private Boolean vakna7;
     private Boolean hugleida;
@@ -62,6 +63,14 @@ public class Day {
  
     public void setId(Long id) {
         this.id = id;
+    }
+    
+    public Long getUserId() {
+        return userId;
+    }
+ 
+    public void setUserId(Long id) {
+        this.userId = id;
     }
 
     public String getDate() {

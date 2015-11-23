@@ -47,7 +47,7 @@
         <fieldset>
           <div id="legend">
             <h3>Árangur</h3>
-            <h4>Það eru ${today.getFinished()} atriði búnir í dag! </h4>
+            <h4>Það eru ${today.getFinished()} atriði búnir í dag! Vel gert ${user.firstName}</h4>
           	</div>
           	<div class="control-group">
             	<label class="control-label"  for="longterm">Hversu marga daga viltu skoða?</label>
