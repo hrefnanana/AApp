@@ -116,27 +116,29 @@ public class LongtermController {
     	
         model.addAttribute("days",longterm.getDays());
         int numberOfDays = longterm.getNumberOfDays();
-        LocalDate ldt = LocalDate.now();
-    	String time = ldt.toString();
+
+        
     	String Data = "";
     	ArrayList<Day> Days = new ArrayList<Day>();
     	Days = longterm.getDays();
     	int total = 0;
     	Day tempday;
-        for(int i = 0; i<numberOfDays; i++){
-        	System.out.println(time+" "+i+" "+ldt);
+    	int totalFinished = 0;
+        for(int i = numberOfDays-1; i>=0; i--){
+        	LocalDate ldt = LocalDate.now();
+            ldt  = ldt.minusDays(Long.valueOf(i));
+        	String time = ldt.toString();
         	
         	int day = ldt.getDayOfMonth();
         	int month = ldt.getMonthValue();
         	int year = ldt.getYear();
         	String date = day+"-"+month+"-"+year;
-        	tempday = Days.remove(0);
+        	tempday = Days.remove(i);
         	if(tempday!=null){
         		total = total + tempday.getFinished();
         	}
-        	Data = Data + "['"+date+"',"+total+"]," ;
-        	System.out.println(Data);
-        	ldt  = ldt.minusDays(Long.valueOf(1));
+        	totalFinished = totalFinished+ 12;
+        	Data = Data + "['"+date+"',"+total+","+totalFinished+"]," ;
         	
         }
         model.addAttribute("data",Data);

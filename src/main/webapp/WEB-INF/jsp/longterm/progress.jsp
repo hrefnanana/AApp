@@ -21,7 +21,7 @@
           google.setOnLoadCallback(drawChart);
           function drawChart() {
             var data = google.visualization.arrayToDataTable([
-              ['Dagsetning',  'Heildaratriði búin'],
+              ['Dagsetning',  'Heildaratriði búin', 'Í fullkomnum heimi'],
               
                 ${data}
               
