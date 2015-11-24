@@ -62,7 +62,7 @@
           	<div class="control-group">
             <!-- Button -->
             	<div class="controls">
-              		<input type="submit" value="Skoða" class="btn button"/>
+              		<input type="submit" value="Skoða" class="btn loginbtn"/>
            		</div>
 
           	</div>

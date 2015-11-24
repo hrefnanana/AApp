@@ -88,7 +88,7 @@
           <div class="control-group">
             <!-- Button -->
             <div class="controls">
-              <input type="submit" value="Skrá Mig" class="btn button"/>
+              <input type="submit" value="Skrá Mig" class="btn loginbtn"/>
             </div>
           </div>
         </fieldset>

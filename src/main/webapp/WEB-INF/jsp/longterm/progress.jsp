@@ -12,6 +12,7 @@
         <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
    		<link rel="stylesheet" href="https://netdna.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js">
     	<link rel="stylesheet" href="/css/index.css">
+      <link rel="stylesheet" href="/css/arangur.css">
 
 
         <link rel="stylesheet" type="text/css" href="<c:url value="/css/postitnote.css"/>"/>
@@ -30,7 +31,7 @@
             var options = {
               title: 'Árangur',
               vAxis: {title: 'Fjöldi Atriða'},
-              backgroundColor: '#DDDBCB',
+              backgroundColor: '#d3f1f0',
               legend: { position: 'bottom' },
               colors: ['#FF0099'],
             };
@@ -71,6 +72,5 @@
 	 <h1 class="text-center">Árangur</h1>
     		<div id="chart_div" style="width: 900px; height: 500px; display:block; margin:0 auto;" class="jojo"></div>
 	</section>
-    
     </body>
 </html>

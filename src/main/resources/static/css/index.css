@@ -3,7 +3,7 @@ font-family: sans-serif;}
 html {font-size:10px;}
 
 body {
-	background-color: #e9ece5;
+	background-color: #fff;
 }
 
 main {
@@ -21,11 +21,11 @@ div.navbar-header{
 	color:#FFFFFF;
 } 
 
-a.navbar-brand:hover {
+.navbar-brand:hover {
 	color:#c0dfd9;
 }
 
-#signout {
+.left {
 	float:right;
 }
 
@@ -39,14 +39,16 @@ a.navbar-brand:hover {
 }
 
 .jumbotron {
-	background-color: #b3c2bf;
-	margin:5rem;
+	background-color: #6ed3cf;
+	margin-top:7rem;
+	margin-left:16rem;
+	margin-right:16rem;
 	
 
 }
 
 .jumbotron h1{
-	color:#555;
+	color:#000000;
 
 
 }
@@ -56,41 +58,55 @@ a.navbar-brand:hover {
 }
 
 .well {
-	background-color: #e9ece5;
-	/*padding: 5rem; */
+	background-color: #e1e8f0;
 	margin: 5rem;
-	margin-left:10rem;
-	margin-right:10rem;
-	/*border: 2px solid #105c66; */
-
+	margin-left:11rem;
+	margin-right:11rem;
 	border: none; 
     border-radius: 0px; 
-
 	font-weight: bold;
+	border-top: 2px solid black;
+    border-bottom: 2px solid black;
 
 }
 
 .well p{
 	
 	font-size: 2rem;
-	color:#555;
+	color:#000000;
 
 
 }	
 
-.button {
-	background-color:#b3c2bf; 
+.btn {
+	background-color:#e1e8f0; 
 	width:35rem;
 	border-radius: 0px;
 	margin-top: 4rem;
 	margin:2rem;
 	border: 2px solid black;
 }
- 
+
+.span13 {
+	margin-left: 25%;
+}
 
 span.sobercounter{
 	font-size: 40px;
 	font-family: garamond;
 }
 
+.btn:hover {
+	background-color:#9068be; 
+}
+
+.loginbtn {
+	margin-top:2rem;
+	margin-left:0rem;
+}
+
+.logoutbtn {
+	margin-left:auto;
+	margin-right: auto;
+}
 

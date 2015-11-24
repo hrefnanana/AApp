@@ -32,7 +32,7 @@
           <a class="navbar-brand" href="/longterm"><span class ="glyphicon glyphicon-search"></span> Árangur</a>
           <a class="navbar-brand" href="/12spor"><span class ="glyphicon glyphicon-book"></span> 12 spor</a>
           <a class="navbar-brand" href="/help"><span class ="glyphicon glyphicon-question-sign"></span> Hjálp</a>
-          <a class="navbar-brand left" href="/signOut" id="signout"><span class ="glyphicon glyphicon-user"></span> Skrá út </span></a>
+          <a class="navbar-brand left" href="/signOut"><span class ="glyphicon glyphicon-user"></span> Skrá út </span></a>
         </div>
       </div>
     </nav>
@@ -52,10 +52,6 @@
       </span> Skoða árangur
       </button>
     </div>
-    <ul>
-      <li><a href="/postit">Click here for Persistence Layer Demo</a></li>
-      <li><a href="/day">PRUFPRUFPRUFURPFURPFUR</a></li>
-    </ul>
+   
   </body>
-    <footer>Class HBV501G, University of Iceland, Fall 2015</footer>
 </html>
