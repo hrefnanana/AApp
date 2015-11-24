@@ -41,12 +41,14 @@
         <div class="container">
             <p>${notLoggedIn}</p>
             <div class="row jumbotron">
-            <div class="span12">
+            <div class="span13">
               <sf:form class="form-horizontal" method="POST" action="/signOut">
                
                     <!-- Button -->
                     <div class="controls">
-                      <input type="submit" value="Skrá út" class="btn button"/>
+
+                      <input type="submit" value="Logout" class="btn logoutbtn"/>
+
                     </div>
                 
               </sf:form>
