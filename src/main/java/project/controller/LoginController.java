@@ -29,18 +29,12 @@ public class LoginController {
     }
 
 
-    // Method that returns the correct view for the URL /postit
-    // This handles the GET request for this URL
-    // Notice the `method = RequestMethod.GET` part
+    // Method that returns the correct view for the URL /login
     @RequestMapping(value = "/login", method = RequestMethod.GET)
     public String loginsViewGet(Model model){
     
   
     	model.addAttribute("user", new User());
-    	
-    	System.out.println("Það var náð mér: GET");
-    	
-    	
 
         // Return the view
         return "logins/login";
@@ -54,25 +48,16 @@ public class LoginController {
     	String userName = user.getUserName();
     	String password = user.getPassword();
     	
-    	System.out.println(user.getFirstName());
-   
-    	
     	User res = userService.findByUserNameAndPassword(userName, password);
-    	
-    	System.out.println(userName);
-    	System.out.println(password);
     	
 
     	if(res != null) {
     		model.addAttribute("user", res);
     		String lastName = res.getLastName();
-        	System.out.println("þú ert búinn að logga þig in man");
-        	System.out.println("seinna nafn " + lastName);
         	return "redirect:/home";
         	
     	}
     	else  {
-    		System.out.println("þú ert ekkkki búinn að logga þig in man"); 
     		model.addAttribute("villa", "Innskráning tókst ekki, reyndu aftur.");
     		return "logins/login";}
     }

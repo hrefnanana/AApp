@@ -29,34 +29,26 @@ public class DayController {
         this.dayService = dayService;
     }
 
-    // Method that returns the correct view for the URL /postit
+    // Method that returns the correct view for the URL /day
     // This handles the GET request for this URL
     // Notice the `method = RequestMethod.GET` part
     @RequestMapping(value = "/day", method = RequestMethod.GET)
     public String dayViewGet(User user, Model model){
     	
     	
-    	System.out.println("whatwhat1");
-    	
     	// the date today in the format YYYYMMDD
-    	// ætti kannski að vera global gæi?
-    	// hvað gerist líka á miðnætti? hvaða time zone er miðað við
+
     	LocalDate ldt = LocalDate.now();
     	String time = ldt.toString();
     	time = time.replace("-", "");
     	
-        // Add a new Postit Note to the model for the form
-        // If you look at the form in PostitNotes.jsp, you can see that we
-        // reference this attribute there by the name `postitNote`.
+        // Add a new Day to the model for the form
         model.addAttribute("day",new Day());
         
 
-        // Here we get all the Postit Notes (in a reverse order) and add them to the model
-        model.addAttribute("days",dayService.findAllByOrderByIdDesc());
+        //If you have previously logged some daily tasks today, they will be marked as done
         model.addAttribute("today",dayService.findByDateAndUserId(time, user.getId()));
-        
-        model.addAttribute("time", time);
-        
+
 
         // Return the view
         return "days/Days";
@@ -79,18 +71,14 @@ public class DayController {
     	day.setDate(time);
     	day.setUserId(user.getId());
 
+    	//if you have logged your day today already, the new day will overwrite the old one
     	dayService.deleteByDateAndUserId(time, user.getId());
-    	System.out.println("whatwhat2");
 
-        // Save the Postit Note that we received from the form
+
+        // Save the day that we received from the form
         dayService.save(day);
 
-        // Here we get all the Postit Notes (in a reverse order) and add them to the model
-        model.addAttribute("days", dayService.findAllByOrderByIdDesc());
-
-        // Add a new Postit Note to the model for the form
-        // If you look at the form in PostitNotes.jsp, you can see that we
-        // reference this attribute there by the name `postitNote`.
+        // Add a new Day to the model for the form
         model.addAttribute("day", new Day());
         model.addAttribute("today",dayService.findByDateAndUserId(time, user.getId()));
 
@@ -98,26 +86,4 @@ public class DayController {
         return "days/Days";
     }
 
-    // Method that returns the correct view for the URL /postit/{name}
-    // The {name} part is a Path Variable, and we can reference that in our method
-    // parameters as a @PathVariable. This enables us to create dynamic URLs that are
-    // based on the data that we have.
-    // This method finds all Postit Notes posted by someone with the requested {name}
-    // and returns a list with all those Postit Notes.
-   /* @RequestMapping(value = "/day/{date}", method = RequestMethod.GET, produces = "text/plain;charset=UTF-8")
-    public String daysGetNotesFromDate(@PathVariable String date,
-                                             Model model){
-    	System.out.println("whatwhat3");
-
-        // Get all Postit Notes with this name and add them to the model
-        model.addAttribute("days", dayService.findByDate(date));
-
-        // Add a new Postit Note to the model for the form
-        // If you look at the form in PostitNotes.jsp, you can see that we
-        // reference this attribute there by the name `postitNote`.
-        model.addAttribute("day", new Day());
-
-        // Return the view
-        return "days/Days";
-    }*/
 }

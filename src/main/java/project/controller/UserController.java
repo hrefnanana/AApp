@@ -34,14 +34,8 @@ public class UserController {
     @RequestMapping(value = "/signUp", method = RequestMethod.GET)
     public String userViewGet(Model model){
     
-    	
-    	
     	model.addAttribute("user", new User());
     	
-    	System.out.println("Það var náð mér: GET");
-    	
-    	
-
         // Return the view
         return "logins/signUp";
     }
@@ -52,8 +46,7 @@ public class UserController {
                                      Model model){
    
     	if (result.hasErrors()) {
-  	      model.addAttribute("villa", "villa");
-  	      System.out.println("villa í signup");
+  	      model.addAttribute("villa", "Það kom upp villa við nýskráningu, vinsamlegast reyndu aftur");
   	      return "logins/signUp";
   	    }
     	else{
@@ -63,24 +56,14 @@ public class UserController {
     	String userName = user.getUserName();
     	String password = user.getPassword();
     
-
-    	System.out.println("Það var ýtt mér: POST" + " " +  firstName + " " + lastName);
-    	System.out.println(userName);
-    	System.out.println(password);
-    	System.out.println(lastName);
-    	
     	String res = userService.doesExist(userName);
     	if(res == null) {
-    		System.out.println("username var ekki til");
     	 	userService.save(user);
     	 	model.addAttribute("success","Nýskráning tókst");
     	}
     	else {
-    		System.out.println("username var til :(");
-    		model.addAttribute("ekkitil", "Þetta username er frátekið");
+    		model.addAttribute("ekkitil", "Þetta notendanafn er frátekið");
     	}
-    		
-    	System.out.println(res);
 
         return "logins/signUp";
     	}

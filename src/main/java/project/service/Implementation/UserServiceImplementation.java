@@ -41,20 +41,14 @@ public class UserServiceImplementation implements UserService {
         return repository.findAllByOrderByIdDesc();
     }
     
-    @Override
-    public void deleteByDate(String date) {
-        repository.deleteByDate(date);
-    }
+
 
     @Override
     public User findOne(Long id) {
         return repository.findOne(id);
     }
 
-    @Override
-    public List<User> findByDate(String date) {
-        return repository.findByDate(date);
-    }
+
 
 	@Override
 	public String doesExist(String username) {
