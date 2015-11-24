@@ -54,7 +54,7 @@
             	<label class="control-label"  for="longterm">Hversu marga daga viltu skoða?</label>
             	<div class="controls">
                 <!-- numberOfDays-->
-              		<sf:input name="fname" type="text" path="numberOfDays" placeholder="0" class="input-xlarge"/>
+              		<sf:input name="fname" type="text" placeholder="0-9" path="numberOfDays"  class="input-xlarge"/>
            		 </div>
            		 
           	</div>
