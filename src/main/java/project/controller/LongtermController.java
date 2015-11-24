@@ -101,6 +101,7 @@ public class LongtermController {
     	int total = 0;
     	Day tempday;
     	int totalFinished = 0;
+    	if(!Days.isEmpty()){
         for(int i = numberOfDays-1; i>=0; i--){
         	LocalDate ldt = LocalDate.now();
             ldt  = ldt.minusDays(Long.valueOf(i));
@@ -117,7 +118,10 @@ public class LongtermController {
         	totalFinished = totalFinished+ 12;
         	Data = Data + "['"+date+"',"+total+","+totalFinished+"]," ;
         	
-        }
+        }}
+    	else{
+    		return "redirect:/longterm";
+    	}
         model.addAttribute("data",Data);
         
 

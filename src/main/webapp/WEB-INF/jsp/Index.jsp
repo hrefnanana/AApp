@@ -41,7 +41,7 @@
       <h1>Góðan daginn <span id= "notandanafn"> ${name} <span></h1>
 
       <div class="well">
-        <p>Þú hefur verið edrú í <span class="sobercounter">${years}</span> ár <span class="sobercounter">${months} </span> mánuði og <span class="sobercounter">${days}</span> daga!</p>
+        <p>Þú hefur verið edrú í <c:if test="${years > 0}"> <span class="sobercounter">${years}</span> ár </c:if><c:if test="${months > 0}"><span class="sobercounter">${months} </span> mánuði og </c:if><span class="sobercounter">${days}</span> dag<c:if test="${days > 1}">a</c:if>!</p>
       </div>
       <button onclick="location.href='/day'"  type="button" class="button btn btn-lg btn-lg">
       <span class="glyphicon glyphicon-check">
