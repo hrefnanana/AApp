@@ -27,26 +27,8 @@ public interface UserRepository extends JpaRepository<User, Long> {
 
     List<User> findAll();
     
-    @Modifying
-    @Transactional
-    @Query(value = "DELETE FROM Day d where d.date = ?1 ")
-    void deleteByDate(String date);
-/*
-    // If we need a custom query that maybe doesn't fit the naming convention used by the JPA repository,
-    // then we can write it quite easily with the @Query notation, like you see below.
-    // This method returns all PostitNotes where the length of the name is equal or greater than 3 characters.
-   // @Query(value = "SELECT p FROM day p where length(p.date) >= 3 ")
-    //List<Day> findAllWithNameLongerThan3Chars();
 
-    // Instead of the method findAllReverseOrder() in PostitNoteService.java,
-    // We could have used this method by adding the words
-    // ByOrderByIdDesc, which mean: Order By Id in a Descending order
-    //
-    List<User> findAllByOrderByIdDesc();
 
-    User findOne(Long id);
-
-    List<User> findByDate(String date); */
     
     
    
@@ -67,7 +49,6 @@ public interface UserRepository extends JpaRepository<User, Long> {
 
     User findOne(Long id);
 
-    List<User> findByDate(String date);
     
     //@Query(value = "SELECT u FROM User u WHERE u.userName = ?1 AND u.password = ?2")
 	User findByUserNameAndPassword(String username, String password);

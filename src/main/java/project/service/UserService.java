@@ -43,9 +43,7 @@ public interface UserService {
      * @param date {@link String}
      * @return All {@link User}s with the {@link String date} passed
      */
-    List<User> findByDate(String date);
-    
-    void deleteByDate(String date);
+
     
     String doesExist(String username);
     

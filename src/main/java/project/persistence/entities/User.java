@@ -16,7 +16,6 @@ public class User {
     private String firstName;
     @NotNull
     private String lastName;
-    private String date;
     @NotNull
     private String userName;
     @NotNull
@@ -38,10 +37,9 @@ public class User {
     public User() {
     }
  
-    public User(String firstName, String lastName, String date, String userName, String password, String soberday, String sobermonth, String soberyear)  {
+    public User(String firstName, String lastName, String userName, String password, String soberday, String sobermonth, String soberyear)  {
         this.firstName = firstName;
         this.lastName = lastName;
-        this.date = date;
         this.userName = userName;
         this.password = password;
         this.soberday = soberday;
@@ -75,14 +73,6 @@ public class User {
     public void setLastName(String last) {
     	this.lastName = last;
     }
-    
-    public String getDate() {
-    	return this.date;
-    }
-    public void setDate(String date) {
-    	this.date = date;
-    }
-    
     
     public String getUserName() {
     	return this.userName;

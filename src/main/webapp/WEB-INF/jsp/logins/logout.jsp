@@ -46,7 +46,7 @@
                
                     <!-- Button -->
                     <div class="controls">
-                      <input type="submit" value="Logout" class="btn button"/>
+                      <input type="submit" value="Skrá út" class="btn button"/>
                     </div>
                 
               </sf:form>

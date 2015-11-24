@@ -25,7 +25,7 @@ public class LogoutController {
 	
 	UserService userService;
 	
-	 // Dependency Injection
+	// Dependency Injection
     @Autowired
     public LogoutController(UserService userService) {
         this.userService = userService;
@@ -33,10 +33,6 @@ public class LogoutController {
 
 	 @RequestMapping(value = "/signOut", method = RequestMethod.GET)
 	    public String prufaViewGet(Model model){
-		 
-		 
-	   
-	    	System.out.println("eitthvaðT");
 	    
 	        // Return the view
 	        return "logins/logout";
@@ -46,7 +42,6 @@ public class LogoutController {
 	public String invalidate(HttpSession session, Model model) {
 	  session.invalidate();
 	  if(model.containsAttribute("user")) model.asMap().remove("user");
-	  System.out.println("Þú ert útskráður");
 	  return "redirect:/";
 	} 
 }

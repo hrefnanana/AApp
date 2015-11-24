@@ -45,7 +45,9 @@
         <fieldset>
           <div id="legend">
             <h3>Nýskráning</h3>
-            <h3>${success}</h3>
+            <h4>${success}</h4>
+            <h4>${villa}</h4>
+            <h4>${ekkitil}</h4>
           	</div>
           	<div class="control-group">
             	<label class="control-label"  for="username">Notendanafn</label>

@@ -36,28 +36,12 @@ public class LongtermController {
         this.dayService = dayService;
     }
 
-    // Method that returns the correct view for the URL /postit
-    // This handles the GET request for this URL
-    // Notice the `method = RequestMethod.GET` part
+    // Method that returns the correct view for the URL /longterm
     @RequestMapping(value = "/longterm", method = RequestMethod.GET)
     public String dayViewGet(User user, Model model){
     	
     	
-    	// the date today in the format YYYYMMDD
-    	// ætti kannski að vera global gæi?
-    	// hvað gerist líka á miðnætti? hvaða time zone er miðað við
-    	LocalDate ldt = LocalDate.now();
-    	String time = ldt.toString();
-    	time = time.replace("-", "");
-    	
-        // Add a new Postit Note to the model for the form
-        // If you look at the form in PostitNotes.jsp, you can see that we
-        // reference this attribute there by the name `postitNote`.
 
-        // Here we get all the Postit Notes (in a reverse order) and add them to the model
-        //model.addAttribute("days",dayService.findAllByOrderByIdDesc());
-        //model.addAttribute("today",dayService.findByDate(time));
-        model.addAttribute("time", time);
         model.addAttribute("longterm",new Longterm());
         model.addAttribute("user",user);
         
@@ -73,12 +57,12 @@ public class LongtermController {
 
         // Save the Postit Note that we received from the form
     	if (result.hasErrors()) {
-    	      model.addAttribute("villa", "villa");
+    	      model.addAttribute("villa", "Einungis er hægt að setja inn tölustafi sem eru stærri en 1");
     	      return "longterm/longterm";
     	    }
     	else{
         int numberOfDays = longterm.getNumberOfDays();
-        System.out.println(numberOfDays);
+
         LocalDate ldt = LocalDate.now();
     	String time = ldt.toString();
     	time = time.replace("-", "");
@@ -88,7 +72,6 @@ public class LongtermController {
         for(int i = 0; i<numberOfDays; i++){
         	
         	Days.add(dayService.findByDateAndUserId(time, user.getId()));
-        	System.out.println(time+" "+i+" "+ldt);
         	ldt  = ldt.minusDays(Long.valueOf(1));
         	time = ldt.toString();
         	time = time.replace("-", "");
@@ -96,14 +79,8 @@ public class LongtermController {
         }
         longterm.addDays(Days);
         model.addAttribute("longterm",longterm);
-        System.out.println(longterm.getNumberOfDays());
         // Here we get all the Postit Notes (in a reverse order) and add them to the model
         
-
-        // Add a new Postit Note to the model for the form
-        // If you look at the form in PostitNotes.jsp, you can see that we
-        // reference this attribute there by the name `postitNote`.
-
         // Return the view
         return "redirect:/longterm/progress";}
     }

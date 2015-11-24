@@ -49,9 +49,9 @@
 				<p>2.Skráðu notandanafn og lykilorð og ýttu á hnappinn Innsrká</p>
 				<p>3.Nú ert nú innskráður í kerfið.</p>  	
 				<h2>Til að skrá sig út</h2>
-    			<p>1.Ekki er þörf á að skrá sig sérstaklega út. </p>
-				<p>2.ÞVÍ ÞAÐ ER EKKI HÆGT!</p>	
-				<p>BIG BROTHER IS WATCHING YOU <span class="glyphicon glyphicon-eye-open"></span></p>
+    			<p>1. Ýttu á Skrá út í valmyndinni </p>
+				<p>2. Ýttu svo á Skrá út takkann</p>	
+        <p>3. Þú hefur skráð þig út</p>  
 				<h2>Til að skrá daga</h2>
     			<p>1.Ýttu á Skrá Daga í valmyndinni efst á síðunni</p>
 				<p>2.Þar getur þú hakað við öll þau atriðið sem þú hefur lokið við þann daginn</p>
