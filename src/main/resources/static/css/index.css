@@ -1,19 +1,32 @@
-html, body {margin: 0;}
+html, body {margin: 0;
+font-family: sans-serif;}
 html {font-size:10px;}
 
 body {
-	background-color: #FFFFFF;
+	background-color: #e9ece5;
 }
 
 main {
 	margin:5rem;
 }
 .navbar {
-	background-color: #050505;
+	background-color: #3b3a36;
+}
+
+div.navbar-header{
+	width:100%;
 }
 
 .navbar-brand{
 	color:#FFFFFF;
+} 
+
+a.navbar-brand:hover {
+	color:#c0dfd9;
+}
+
+#signout {
+	float:right;
 }
 
 
@@ -26,44 +39,58 @@ main {
 }
 
 .jumbotron {
-	background-color: #1B9AAA;
+	background-color: #b3c2bf;
 	margin:5rem;
-	border:solid #050505;
-	border-radius:2rem;
+	
+
 }
 
 .jumbotron h1{
-	color:#050505;
+	color:#555;
 
 
 }
 
 .jumbotron h2 {
-	color:#050505;
+	color:#555;
 }
 
 .well {
-	background-color: #DDDBCB;
-	padding: 5rem;
+	background-color: #e9ece5;
+	/*padding: 5rem; */
 	margin: 5rem;
 	margin-left:10rem;
 	margin-right:10rem;
-	border:solid #050505;
+	/*border: 2px solid #105c66; */
+
+	border: none; 
+    border-radius: 0px; 
+
 	font-weight: bold;
-	border-radius:2rem;
+
 }
 
 .well p{
-	font-weight: bold;
+	
 	font-size: 2rem;
+	color:#555;
+
 
 }	
 
 .button {
-	background-color:#DDDBCB;
+	background-color:#b3c2bf; 
 	width:35rem;
-	border:solid #050505;
-	margin-top:1rem;
+	border-radius: 0px;
+	margin-top: 4rem;
+	margin:2rem;
+	border: 2px solid black;
+}
+ 
+
+span.sobercounter{
+	font-size: 40px;
+	font-family: garamond;
 }
 
 

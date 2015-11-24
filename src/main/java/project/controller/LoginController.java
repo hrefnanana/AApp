@@ -62,7 +62,7 @@ public class LoginController {
     	System.out.println(userName);
     	System.out.println(password);
     	
-    	
+
     	if(res != null) {
     		model.addAttribute("user", res);
     		String lastName = res.getLastName();
