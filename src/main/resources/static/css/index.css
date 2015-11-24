@@ -43,6 +43,8 @@ div.navbar-header{
 	margin-top:7rem;
 	margin-left:16rem;
 	margin-right:16rem;
+	border-top: 2px solid black;
+	border-bottom:2px solid black;
 	
 
 }

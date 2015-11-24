@@ -40,8 +40,8 @@ public class LogoutController {
 	
 	@RequestMapping(value="/signOut", method=RequestMethod.POST)
 	public String invalidate(HttpSession session, Model model) {
-	  session.invalidate();
-	  if(model.containsAttribute("user")) model.asMap().remove("user");
-	  return "redirect:/";
+		session.invalidate();
+		if(model.containsAttribute("user")) model.asMap().remove("user");
+		return "redirect:/";
 	} 
 }
