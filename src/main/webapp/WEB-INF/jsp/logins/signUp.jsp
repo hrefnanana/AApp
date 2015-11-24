@@ -81,7 +81,7 @@
             <!-- Soberday-->
             <label class="control-label" for="soberday">Fyrsti edrúdagur</label>
             <div class="controls">
-              <sf:input path="soberday" type="soberday" placeholder="DD" class="foo"/>/<sf:input path="sobermonth" type="sobermonth" placeholder="MM" class="foo"/>/<sf:input path="soberyear" type="soberyear" placeholder="YY" class="foo"/>
+              <sf:input path="soberday" type="soberday" placeholder="DD" class="foo"/>/<sf:input path="sobermonth" type="sobermonth" placeholder="MM" class="foo"/>/<sf:input path="soberyear" type="soberyear" placeholder="YYYY" class="foo"/>
             </div>
           </div>
 
