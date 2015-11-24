@@ -41,6 +41,7 @@
         <fieldset>
           <div id="legend">
             <h3>Innskrá</h3>
+            <h3>${villa}</h3>
           	</div>
           	<div class="control-group">
             	<label class="control-label"  for="username">Notendanafn</label>

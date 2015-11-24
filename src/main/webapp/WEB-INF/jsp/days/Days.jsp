@@ -44,7 +44,7 @@
       <div class="col-12">
         <div class="jumbotron">
         <h4 class="text-center"> Hakaðu við þau atriði sem þú hefur lokið við í dag</h4>
-        <h4>${today.getFinished()}</h4>
+
 			<sf:form method="POST" commandName="day" action="/day" class="well">
 			
 			

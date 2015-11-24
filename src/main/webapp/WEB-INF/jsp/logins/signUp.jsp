@@ -15,7 +15,7 @@
     <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js">
     <link rel="stylesheet" href="/css/index.css">
-    <link rel="stylesheet" href="/css/login.css">
+    <link rel="stylesheet" href="/css/signUp.css">
   </head>
     <body>
 
@@ -79,23 +79,7 @@
             <!-- Soberday-->
             <label class="control-label" for="soberday">Fyrsti edrúdagur</label>
             <div class="controls">
-              <sf:input path="soberday" type="soberday" placeholder="DDMMYY" class="input-xlarge"/>
-            </div>
-          </div>
-
-          <div class="control-group">
-            <!-- Soberday-->
-            <label class="control-label" for="sobermonth">Fyrsti edrúdagur</label>
-            <div class="controls">
-              <sf:input path="sobermonth" type="sobermonth" placeholder="DDMMYY" class="input-xlarge"/>
-            </div>
-          </div>
-
-          <div class="control-group">
-            <!-- Soberday-->
-            <label class="control-label" for="soberyear">Fyrsti edrúdagur</label>
-            <div class="controls">
-              <sf:input path="soberyear" type="soberyear" placeholder="DDMMYY" class="input-xlarge"/>
+              <sf:input path="soberday" type="soberday" placeholder="DD" class="foo"/>/<sf:input path="sobermonth" type="sobermonth" placeholder="MM" class="foo"/>/<sf:input path="soberyear" type="soberyear" placeholder="YY" class="foo"/>
             </div>
           </div>
 

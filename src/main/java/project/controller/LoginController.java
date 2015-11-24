@@ -62,20 +62,19 @@ public class LoginController {
     	System.out.println(userName);
     	System.out.println(password);
     	
-    	model.addAttribute("user", res);
+    	
     	if(res != null) {
+    		model.addAttribute("user", res);
     		String lastName = res.getLastName();
         	System.out.println("þú ert búinn að logga þig in man");
         	System.out.println("seinna nafn " + lastName);
         	return "redirect:/home";
         	
     	}
-    	
-    	else  {System.out.println("þú ert ekkkki búinn að logga þig in man"); 
-    	
-    	return "logins/login";}
-    		
-    
+    	else  {
+    		System.out.println("þú ert ekkkki búinn að logga þig in man"); 
+    		model.addAttribute("villa", "Innskráning tókst ekki, reyndu aftur.");
+    		return "logins/login";}
     }
 
 	
