@@ -108,37 +108,37 @@ public class HomeController {
     @RequestMapping(value = "/12spor", method = RequestMethod.GET)
     public String spor(Model model){	
     	
-   	 LocalDate soberDate = LocalDate.of(2014, 6, 29);
-   	 LocalDate dateToday = LocalDate.now();
-   	 Period soberCounter = soberDate.until(dateToday);
-   	 int years = soberCounter.getYears();
-		 int months = soberCounter.getMonths();
-		 int days = soberCounter.getDays();
-   			 
-   	 model.addAttribute("years",years);
-   	 model.addAttribute("days",days);
-   	 model.addAttribute("months",months);
-   	 
-       // The string "Index" that is returned here is the name of the view
-       // (the Index.jsp file) that is in the path /main/webapp/WEB-INF/jsp/
-       // If you change "Index" to something else, be sure you have a .jsp
-       // file that has the same name
-       return "12spor";
+	   	 LocalDate soberDate = LocalDate.of(2014, 6, 29);
+	   	 LocalDate dateToday = LocalDate.now();
+	   	 Period soberCounter = soberDate.until(dateToday);
+	   	 int years = soberCounter.getYears();
+			 int months = soberCounter.getMonths();
+			 int days = soberCounter.getDays();
+	   			 
+	   	 model.addAttribute("years",years);
+	   	 model.addAttribute("days",days);
+	   	 model.addAttribute("months",months);
+	   	 
+	       // The string "Index" that is returned here is the name of the view
+	       // (the Index.jsp file) that is in the path /main/webapp/WEB-INF/jsp/
+	       // If you change "Index" to something else, be sure you have a .jsp
+	       // file that has the same name
+	       return "12spor";
    }
     // To call this method, enter "localhost:8080/user" into a browser
     @RequestMapping(value = "/help", method = RequestMethod.GET)
     public String help(Model model){	
     	
-   	 LocalDate soberDate = LocalDate.of(2014, 6, 29);
-   	 LocalDate dateToday = LocalDate.now();
-   	 Period soberCounter = soberDate.until(dateToday);
-   	 int years = soberCounter.getYears();
-		 int months = soberCounter.getMonths();
-		 int days = soberCounter.getDays();
-   			 
-   	 model.addAttribute("years",years);
-   	 model.addAttribute("days",days);
-   	 model.addAttribute("months",months);
+	   	 LocalDate soberDate = LocalDate.of(2014, 6, 29);
+	   	 LocalDate dateToday = LocalDate.now();
+	   	 Period soberCounter = soberDate.until(dateToday);
+	   	 int years = soberCounter.getYears();
+			 int months = soberCounter.getMonths();
+			 int days = soberCounter.getDays();
+	   			 
+	   	 model.addAttribute("years",years);
+	   	 model.addAttribute("days",days);
+	   	 model.addAttribute("months",months);
    	 
        // The string "Index" that is returned here is the name of the view
        // (the Index.jsp file) that is in the path /main/webapp/WEB-INF/jsp/
