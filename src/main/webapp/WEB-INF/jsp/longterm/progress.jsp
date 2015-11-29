@@ -22,7 +22,7 @@
           google.setOnLoadCallback(drawChart);
           function drawChart() {
             var data = google.visualization.arrayToDataTable([
-              ['Dagsetning',  'Heildaratriði búin', 'Í fullkomnum heimi'],
+              ['Dagsetning',  'Heildaratriði búin', 'Í fullkomnum heimi', 'Klárað í dag'],
               
                 ${data}
               
@@ -33,10 +33,17 @@
               vAxis: {title: 'Fjöldi Atriða'},
               backgroundColor: '#d3f1f0',
               legend: { position: 'bottom' },
-              colors: ['#FF0099'],
+              colors: ['#FF0099','#9900FF','#3333FF'],
+
+              pointSize: 15,
+              series: {
+                0: { pointShape: 'circle' },
+                1: { pointShape: 'triangle' },
+                2: { pointShape: 'star' },
+            }
             };
 
-            var chart = new google.visualization.SteppedAreaChart(document.getElementById('chart_div'));
+            var chart = new google.visualization.LineChart(document.getElementById('chart_div'));
 
             chart.draw(data, options);
           }
