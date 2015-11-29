@@ -101,6 +101,7 @@ public class LongtermController {
     	int total = 0;
     	Day tempday;
     	int totalFinished = 0;
+    	int finishedToday;
     	if(!Days.isEmpty()){
         for(int i = numberOfDays-1; i>=0; i--){
         	LocalDate ldt = LocalDate.now();
@@ -114,9 +115,13 @@ public class LongtermController {
         	tempday = Days.remove(i);
         	if(tempday!=null){
         		total = total + tempday.getFinished();
+        		finishedToday = tempday.getFinished();
+        	}
+        	else{
+        		finishedToday = 0;
         	}
         	totalFinished = totalFinished+ 12;
-        	Data = Data + "['"+date+"',"+total+","+totalFinished+"]," ;
+        	Data = Data + "['"+date+"',"+total+","+totalFinished+","+finishedToday+ "]," ;
         	
         }}
     	else{

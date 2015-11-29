@@ -47,7 +47,7 @@
                     <!-- Button -->
                     <div class="controls">
 
-                      <input type="submit" value="Logout" class="btn logoutbtn"/>
+                      <input type="submit" value="Skrá út" class="btn logoutbtn"/>
 
                     </div>
                 
